@@ -101,6 +101,12 @@
     <Compile Include="UI\Frm_recordList.Designer.cs">
       <DependentUpon>Frm_recordList.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Frm_test2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Frm_test2.Designer.cs">
+      <DependentUpon>Frm_test2.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Frm_user.cs">
       <SubType>Form</SubType>
     </Compile>

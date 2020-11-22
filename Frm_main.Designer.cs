@@ -37,8 +37,10 @@
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("用户管理", new System.Windows.Forms.TreeNode[] {
             treeNode4});
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("测试");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("待定", new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("test2");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("待定", new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7});
             this.sc_main = new System.Windows.Forms.SplitContainer();
             this.tv_menu = new System.Windows.Forms.TreeView();
             this.tc_content = new System.Windows.Forms.TabControl();
@@ -71,24 +73,26 @@
             this.tv_menu.ItemHeight = 20;
             this.tv_menu.Location = new System.Drawing.Point(0, 0);
             this.tv_menu.Name = "tv_menu";
-            treeNode1.Name = "Frm_record";
+            treeNode1.Name = "NoteBook.UI.Frm_record";
             treeNode1.Text = "记录";
             treeNode2.Name = "noetQuery";
             treeNode2.Text = "查询";
             treeNode3.Name = "noteManage";
             treeNode3.Text = "备忘管理";
-            treeNode4.Name = "Frm_user";
+            treeNode4.Name = "NoteBook.UI.Frm_user";
             treeNode4.Text = "新增";
             treeNode5.Name = "userManage";
             treeNode5.Text = "用户管理";
             treeNode6.Name = "NoteBook.Frm_test";
             treeNode6.Text = "测试";
-            treeNode7.Name = "waitFor";
-            treeNode7.Text = "待定";
+            treeNode7.Name = "NoteBook.UI.Frm_test2";
+            treeNode7.Text = "test2";
+            treeNode8.Name = "waitFor";
+            treeNode8.Text = "待定";
             this.tv_menu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode3,
             treeNode5,
-            treeNode7});
+            treeNode8});
             this.tv_menu.Size = new System.Drawing.Size(150, 450);
             this.tv_menu.TabIndex = 0;
             this.tv_menu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tv_menu_AfterSelect);
