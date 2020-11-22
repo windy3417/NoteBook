@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting;
 using System.Text;
 using System.Windows.Forms;
 using Utility;
@@ -21,10 +22,17 @@ namespace NoteBook
 
         private void tv_menu_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            Frm_record v = new Frm_record();
-            string tabPageText = v.Text;
-            EmbedForm embedForm = new EmbedForm();
-            embedForm.openForm(v, tabPageText, tc_content, sc_main.Panel2);
+
+            if (e.Node.Level==1)
+            {
+                ObjectHandle objectHandle = Activator.CreateInstance(null, e.Node.Name);
+
+                Form f = (Form)objectHandle.Unwrap();
+                string tabPageText = f.Text;
+                EmbedForm embedForm = new EmbedForm();
+                embedForm.openForm(f, tabPageText, tc_content, sc_main.Panel2);
+            }
+            
         }
     }
 }
