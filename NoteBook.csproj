@@ -69,17 +69,12 @@
     <Compile Include="Frm_main.Designer.cs">
       <DependentUpon>Frm_main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_test.Designer.cs">
-      <DependentUpon>Frm_test.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202011220122297_first.cs" />
     <Compile Include="Migrations\202011220122297_first.Designer.cs">
       <DependentUpon>202011220122297_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Modle\NoteRecordModle.cs" />
     <Compile Include="Modle\UserModle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,29 +84,17 @@
     <Compile Include="UI\Frm_login.Designer.cs">
       <DependentUpon>Frm_login.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Frm_record.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Frm_record.Designer.cs">
-      <DependentUpon>Frm_record.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Frm_recordList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Frm_recordList.Designer.cs">
-      <DependentUpon>Frm_recordList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Frm_test2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Frm_test2.Designer.cs">
-      <DependentUpon>Frm_test2.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Frm_user.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Frm_user.Designer.cs">
       <DependentUpon>Frm_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Frm_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Frm_record.Designer.cs">
+      <DependentUpon>Frm_record.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Frm_main.resx">
       <DependentUpon>Frm_main.cs</DependentUpon>
@@ -127,6 +110,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\Frm_record.resx">
       <DependentUpon>Frm_record.cs</DependentUpon>
@@ -145,6 +129,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -18,6 +18,13 @@ namespace NoteBook
         public Frm_main()
         {
             InitializeComponent();
+            initializeControlState();
+        }
+
+        void initializeControlState()
+        {
+            //最大化窗体
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void tv_menu_AfterSelect(object sender, TreeViewEventArgs e)

@@ -16,5 +16,7 @@ namespace NoteBook.DAL
         }
 
         public virtual  DbSet<UserModle> Users { get; set; }
+        public virtual DbSet<NoteRecordModle> NoteRecords { get; set; }
+        
     }
 }
