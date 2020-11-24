@@ -6,6 +6,7 @@ using NoteBook.Modle;
 using System.Data;
 using System.Data.SqlClient;
 using static Utility.Sql.Sqlhelper;
+using Utility.Modle;
 
 namespace NoteBook.DAL
 {
@@ -41,7 +42,7 @@ namespace NoteBook.DAL
 
 
         /// <summary>
-        /// 检测登录密码与用户名
+        /// 检测登录密码与用户名,使用EF
         /// </summary>
         /// <param name="pwd"></param>
         /// <returns></returns>
@@ -53,6 +54,12 @@ namespace NoteBook.DAL
                 var q = db.Users.Where(s => s.userID == userID & s.pwd == pwd).ToList();
                 if (q.Count > 0)
                 {
+                    foreach (var item in q)
+                    {
+                        CurrentUser.userID = item.userID;
+                        CurrentUser.userName = item.name;
+                    }
+                 
                     return true;
                 }
                 else
@@ -71,8 +78,7 @@ namespace NoteBook.DAL
         /// <returns></returns>
         public bool loginCheckWithSqlparameters(string userID, string pwd)
         {
-
-
+            
             string sql = "select  *  from  [user] where userID=@userID and pwd=@pwd  ";
             SqlParameter[] sqlParameters =
             {
@@ -81,8 +87,11 @@ namespace NoteBook.DAL
             };
 
             SqlDataReader sqlDataReader = Utility.Sql.Sqlhelper.GetSqlDataReader(sql, DataSourceType.business, sqlParameters);
-            if (sqlDataReader.HasRows)
+            if (sqlDataReader.Read())
             {
+
+                CurrentUser.userID = sqlDataReader["userID"].ToString();
+                CurrentUser.userName = sqlDataReader["name"].ToString();
                 return true;
 
 

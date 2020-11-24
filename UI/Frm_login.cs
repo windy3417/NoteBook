@@ -30,6 +30,7 @@ namespace NoteBook.UI
         {
             if (new UserService().loginCheckWithSqlparameters(user, pwd))
             {
+               
                 return true;
             }
 
@@ -37,6 +38,11 @@ namespace NoteBook.UI
 
         }
 
+        /// <summary>
+        /// 管理员信息设置
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="eventArgs"></param>
         protected override void adminSetup(object sender, EventArgs eventArgs)
         {
             base.adminSetup(sender,eventArgs);

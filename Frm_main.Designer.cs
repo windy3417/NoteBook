@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("记录");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("查询");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("备忘管理", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("协同发起");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("协同处理");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("业务协同", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2});
             System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("新增");
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("用户管理", new System.Windows.Forms.TreeNode[] {
             treeNode4});
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_main));
             this.sc_main = new System.Windows.Forms.SplitContainer();
             this.tv_menu = new System.Windows.Forms.TreeView();
             this.tc_content = new System.Windows.Forms.TabControl();
@@ -69,11 +70,11 @@
             this.tv_menu.Location = new System.Drawing.Point(0, 0);
             this.tv_menu.Name = "tv_menu";
             treeNode1.Name = "NoteBook.UI.Frm_record";
-            treeNode1.Text = "记录";
-            treeNode2.Name = "noetQuery";
-            treeNode2.Text = "查询";
+            treeNode1.Text = "协同发起";
+            treeNode2.Name = "NoteBook.UI.Frm_progress";
+            treeNode2.Text = "协同处理";
             treeNode3.Name = "noteManage";
-            treeNode3.Text = "备忘管理";
+            treeNode3.Text = "业务协同";
             treeNode4.Name = "NoteBook.UI.Frm_user";
             treeNode4.Text = "新增";
             treeNode5.Name = "userManage";
@@ -100,8 +101,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.sc_main);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_main";
-            this.Text = "工作备忘";
+            this.Text = "业务协同管理";
             this.sc_main.Panel1.ResumeLayout(false);
             this.sc_main.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sc_main)).EndInit();

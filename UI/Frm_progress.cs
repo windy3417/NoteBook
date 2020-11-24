@@ -17,9 +17,9 @@ using static NoteBook.Modle.EnumModle;
 
 namespace NoteBook.UI
 {
-    public partial class Frm_record : Form
+    public partial class Frm_progress : Form
     {
-        public Frm_record()
+        public Frm_progress()
         {
             InitializeComponent();
             this.FormClosed += new FormClosedEventHandler(this.closeParent);
@@ -51,15 +51,10 @@ namespace NoteBook.UI
         /// </summary>
         private void initializeDatasource()
         {
-
-            cmb_requestPerson.DataSource = new CustomerService().getCustomerList().Where<Customer>(c => c.FailuerDate == null).Select((c) => new { c.CusCode, c.CusName }).ToList();
-
-            cmb_custName.DisplayMember = "CusName";
-            cmb_custName.ValueMember = "CusCode";
-
-            dtp_incomeDateStart.Value = DateTime.Now.AddDays(-DateTime.Now.Day + 1);
+            
 
 
+         
 
 
         }
@@ -76,12 +71,9 @@ namespace NoteBook.UI
             tsb_previewPrint.Enabled = false;
             tsb_print.Enabled = false;
 
-            rtb_progress.Enabled = false;
-
             pnl_query.Visible = false;
 
-            lbl_status.Visible = false;
-            lbl_statusValue.Visible = false;
+         
           
         }
         #endregion
@@ -136,7 +128,7 @@ namespace NoteBook.UI
             tsb_previewPrint.Enabled = false;
             tsb_modify.Enabled = false;
 
-            lbl_status.Visible = true;
+         
             //调整单据修改时的控件状态
             if (addOrChangeFlag == addOrChangeMolde.change.ToString())
             {
@@ -152,7 +144,7 @@ namespace NoteBook.UI
             
             //设定控件值
             this.lbl_vouchNoValue.Text = DateTime.Now.ToString("yyyyMMddHHmmss");
-            lbl_statusValue.Text = voucherStatus.开立.ToString();
+         
             lbl_personCodeValue.Text = CurrentUser.userName;
 
             initializeDatasource();
@@ -427,11 +419,40 @@ namespace NoteBook.UI
         }
         #endregion
 
-           
-                      
-               
 
       
+
+     
+
+  
+
+ 
+
+
+
+   
+
+
+
+      
+
+   
+
+
+        /// <summary>
+        /// 计算结余金额
+        /// </summary>
+
+
+
+
+
+
+
+
+
+
+       
         #region 打印
 
 

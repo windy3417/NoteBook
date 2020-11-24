@@ -1,6 +1,6 @@
 ﻿namespace NoteBook.UI
 {
-    partial class Frm_record
+    partial class Frm_progress
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -28,16 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_record));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_progress));
             this.pnl_first = new System.Windows.Forms.Panel();
+            this.tlp_content = new System.Windows.Forms.TableLayoutPanel();
+            this.lbl_itmeName = new System.Windows.Forms.Label();
+            this.lbl_requestDate = new System.Windows.Forms.Label();
+            this.lbl_requestPerson = new System.Windows.Forms.Label();
+            this.txt_itemName = new System.Windows.Forms.TextBox();
+            this.cmb_requestPerson = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lbl_needComplishedDate = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.lbl_planComplichedDate = new System.Windows.Forms.Label();
+            this.lbl_reponsiblePerson = new System.Windows.Forms.Label();
+            this.cmb_reponsiblePerson = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.rtb_memo = new System.Windows.Forms.RichTextBox();
+            this.rtb_summary = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_progress = new System.Windows.Forms.Label();
+            this.lbl_summary = new System.Windows.Forms.Label();
             this.pnl_query = new System.Windows.Forms.Panel();
             this.rtxt_voucherNO = new System.Windows.Forms.RichTextBox();
             this.lbl_vouchNo = new System.Windows.Forms.Label();
-            this.lbl_status = new System.Windows.Forms.Label();
             this.lbl_personCode = new System.Windows.Forms.Label();
             this.horizonLine1 = new Utility.UControl.HorizonLine();
             this.dtp_makeDate = new System.Windows.Forms.DateTimePicker();
-            this.lbl_statusValue = new System.Windows.Forms.Label();
             this.lbl_personCodeValue = new System.Windows.Forms.Label();
             this.lbl_vouchNoValue = new System.Windows.Forms.Label();
             this.lbl_date = new System.Windows.Forms.Label();
@@ -46,25 +62,6 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.rtb_summary = new System.Windows.Forms.RichTextBox();
-            this.lbl_summary = new System.Windows.Forms.Label();
-            this.tlp_content = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl_itmeName = new System.Windows.Forms.Label();
-            this.lbl_requestDate = new System.Windows.Forms.Label();
-            this.lbl_requestPerson = new System.Windows.Forms.Label();
-            this.lbl_reponsiblePerson = new System.Windows.Forms.Label();
-            this.lbl_needComplishedDate = new System.Windows.Forms.Label();
-            this.lbl_planComplichedDate = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.rtb_memo = new System.Windows.Forms.RichTextBox();
-            this.txt_itemName = new System.Windows.Forms.TextBox();
-            this.cmb_requestPerson = new System.Windows.Forms.ComboBox();
-            this.cmb_reponsiblePerson = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.lbl_progress = new System.Windows.Forms.Label();
-            this.rtb_progress = new System.Windows.Forms.RichTextBox();
             this.tsb_new = new System.Windows.Forms.ToolStripButton();
             this.tsb_save = new System.Windows.Forms.ToolStripButton();
             this.tsb_abandon = new System.Windows.Forms.ToolStripButton();
@@ -75,10 +72,13 @@
             this.tsb_delete = new System.Windows.Forms.ToolStripButton();
             this.tsb_close = new System.Windows.Forms.ToolStripButton();
             this.btn_query = new System.Windows.Forms.Button();
+            this.rtb_progress = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rtb_handle = new System.Windows.Forms.RichTextBox();
             this.pnl_first.SuspendLayout();
+            this.tlp_content.SuspendLayout();
             this.pnl_query.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.tlp_content.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_first
@@ -86,199 +86,26 @@
             this.pnl_first.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pnl_first.Controls.Add(this.tlp_content);
             this.pnl_first.Controls.Add(this.rtb_memo);
+            this.pnl_first.Controls.Add(this.rtb_handle);
             this.pnl_first.Controls.Add(this.rtb_progress);
             this.pnl_first.Controls.Add(this.rtb_summary);
             this.pnl_first.Controls.Add(this.label6);
+            this.pnl_first.Controls.Add(this.label1);
             this.pnl_first.Controls.Add(this.lbl_progress);
             this.pnl_first.Controls.Add(this.lbl_summary);
             this.pnl_first.Controls.Add(this.pnl_query);
             this.pnl_first.Controls.Add(this.lbl_vouchNo);
-            this.pnl_first.Controls.Add(this.lbl_status);
             this.pnl_first.Controls.Add(this.lbl_personCode);
             this.pnl_first.Controls.Add(this.horizonLine1);
             this.pnl_first.Controls.Add(this.dtp_makeDate);
-            this.pnl_first.Controls.Add(this.lbl_statusValue);
             this.pnl_first.Controls.Add(this.lbl_personCodeValue);
             this.pnl_first.Controls.Add(this.lbl_vouchNoValue);
             this.pnl_first.Controls.Add(this.lbl_date);
             this.pnl_first.Controls.Add(this.lbl_titel);
-            this.pnl_first.Location = new System.Drawing.Point(33, 28);
+            this.pnl_first.Location = new System.Drawing.Point(79, 28);
             this.pnl_first.Name = "pnl_first";
-            this.pnl_first.Size = new System.Drawing.Size(977, 585);
+            this.pnl_first.Size = new System.Drawing.Size(931, 629);
             this.pnl_first.TabIndex = 6;
-            // 
-            // pnl_query
-            // 
-            this.pnl_query.Controls.Add(this.btn_query);
-            this.pnl_query.Controls.Add(this.rtxt_voucherNO);
-            this.pnl_query.Location = new System.Drawing.Point(710, 51);
-            this.pnl_query.Name = "pnl_query";
-            this.pnl_query.Size = new System.Drawing.Size(200, 46);
-            this.pnl_query.TabIndex = 20;
-            // 
-            // rtxt_voucherNO
-            // 
-            this.rtxt_voucherNO.Location = new System.Drawing.Point(47, 15);
-            this.rtxt_voucherNO.Name = "rtxt_voucherNO";
-            this.rtxt_voucherNO.Size = new System.Drawing.Size(150, 28);
-            this.rtxt_voucherNO.TabIndex = 18;
-            this.rtxt_voucherNO.Text = "";
-            // 
-            // lbl_vouchNo
-            // 
-            this.lbl_vouchNo.AutoSize = true;
-            this.lbl_vouchNo.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_vouchNo.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_vouchNo.Location = new System.Drawing.Point(32, 114);
-            this.lbl_vouchNo.Name = "lbl_vouchNo";
-            this.lbl_vouchNo.Size = new System.Drawing.Size(70, 12);
-            this.lbl_vouchNo.TabIndex = 16;
-            this.lbl_vouchNo.Text = "项目编号：";
-            // 
-            // lbl_status
-            // 
-            this.lbl_status.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_status.AutoSize = true;
-            this.lbl_status.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_status.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_status.Location = new System.Drawing.Point(797, 26);
-            this.lbl_status.Name = "lbl_status";
-            this.lbl_status.Size = new System.Drawing.Size(44, 12);
-            this.lbl_status.TabIndex = 1;
-            this.lbl_status.Text = "状态：";
-            // 
-            // lbl_personCode
-            // 
-            this.lbl_personCode.AutoSize = true;
-            this.lbl_personCode.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_personCode.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_personCode.Location = new System.Drawing.Point(349, 114);
-            this.lbl_personCode.Name = "lbl_personCode";
-            this.lbl_personCode.Size = new System.Drawing.Size(83, 12);
-            this.lbl_personCode.TabIndex = 1;
-            this.lbl_personCode.Text = "记录人姓名：";
-            // 
-            // horizonLine1
-            // 
-            this.horizonLine1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.horizonLine1.LineColor = System.Drawing.SystemColors.ControlText;
-            this.horizonLine1.LineWidth = 1;
-            this.horizonLine1.Location = new System.Drawing.Point(15, 133);
-            this.horizonLine1.Name = "horizonLine1";
-            this.horizonLine1.Size = new System.Drawing.Size(900, 1);
-            this.horizonLine1.TabIndex = 15;
-            // 
-            // dtp_makeDate
-            // 
-            this.dtp_makeDate.Location = new System.Drawing.Point(385, 66);
-            this.dtp_makeDate.Name = "dtp_makeDate";
-            this.dtp_makeDate.Size = new System.Drawing.Size(124, 21);
-            this.dtp_makeDate.TabIndex = 14;
-            // 
-            // lbl_statusValue
-            // 
-            this.lbl_statusValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbl_statusValue.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_statusValue.ForeColor = System.Drawing.Color.Red;
-            this.lbl_statusValue.Location = new System.Drawing.Point(838, 25);
-            this.lbl_statusValue.Name = "lbl_statusValue";
-            this.lbl_statusValue.Size = new System.Drawing.Size(69, 14);
-            this.lbl_statusValue.TabIndex = 6;
-            // 
-            // lbl_personCodeValue
-            // 
-            this.lbl_personCodeValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbl_personCodeValue.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_personCodeValue.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_personCodeValue.Location = new System.Drawing.Point(438, 113);
-            this.lbl_personCodeValue.Name = "lbl_personCodeValue";
-            this.lbl_personCodeValue.Size = new System.Drawing.Size(130, 14);
-            this.lbl_personCodeValue.TabIndex = 6;
-            // 
-            // lbl_vouchNoValue
-            // 
-            this.lbl_vouchNoValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbl_vouchNoValue.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_vouchNoValue.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_vouchNoValue.Location = new System.Drawing.Point(110, 113);
-            this.lbl_vouchNoValue.Name = "lbl_vouchNoValue";
-            this.lbl_vouchNoValue.Size = new System.Drawing.Size(160, 14);
-            this.lbl_vouchNoValue.TabIndex = 6;
-            // 
-            // lbl_date
-            // 
-            this.lbl_date.AutoSize = true;
-            this.lbl_date.Location = new System.Drawing.Point(322, 70);
-            this.lbl_date.Name = "lbl_date";
-            this.lbl_date.Size = new System.Drawing.Size(59, 12);
-            this.lbl_date.TabIndex = 7;
-            this.lbl_date.Text = "记录日期:";
-            // 
-            // lbl_titel
-            // 
-            this.lbl_titel.AutoSize = true;
-            this.lbl_titel.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_titel.Location = new System.Drawing.Point(329, 19);
-            this.lbl_titel.Name = "lbl_titel";
-            this.lbl_titel.Size = new System.Drawing.Size(181, 29);
-            this.lbl_titel.TabIndex = 12;
-            this.lbl_titel.Text = "协 同 发 起";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsb_new,
-            this.tsb_save,
-            this.tsb_abandon,
-            this.tsb_modify,
-            this.tsb_query,
-            this.tsb_previewPrint,
-            this.tsb_print,
-            this.tsb_delete,
-            this.tsb_close});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1056, 25);
-            this.toolStrip1.TabIndex = 7;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
-            // printDialog1
-            // 
-            this.printDialog1.UseEXDialog = true;
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // rtb_summary
-            // 
-            this.rtb_summary.Location = new System.Drawing.Point(28, 299);
-            this.rtb_summary.Name = "rtb_summary";
-            this.rtb_summary.Size = new System.Drawing.Size(867, 96);
-            this.rtb_summary.TabIndex = 24;
-            this.rtb_summary.Text = "";
-            // 
-            // lbl_summary
-            // 
-            this.lbl_summary.AutoSize = true;
-            this.lbl_summary.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_summary.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_summary.Location = new System.Drawing.Point(31, 284);
-            this.lbl_summary.Name = "lbl_summary";
-            this.lbl_summary.Size = new System.Drawing.Size(70, 12);
-            this.lbl_summary.TabIndex = 23;
-            this.lbl_summary.Text = "需求描述：";
             // 
             // tlp_content
             // 
@@ -345,61 +172,6 @@
             this.lbl_requestPerson.TabIndex = 17;
             this.lbl_requestPerson.Text = "申请人：";
             // 
-            // lbl_reponsiblePerson
-            // 
-            this.lbl_reponsiblePerson.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_reponsiblePerson.AutoSize = true;
-            this.lbl_reponsiblePerson.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_reponsiblePerson.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_reponsiblePerson.Location = new System.Drawing.Point(267, 44);
-            this.lbl_reponsiblePerson.Name = "lbl_reponsiblePerson";
-            this.lbl_reponsiblePerson.Size = new System.Drawing.Size(57, 12);
-            this.lbl_reponsiblePerson.TabIndex = 17;
-            this.lbl_reponsiblePerson.Text = "责任人：";
-            // 
-            // lbl_needComplishedDate
-            // 
-            this.lbl_needComplishedDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_needComplishedDate.AutoSize = true;
-            this.lbl_needComplishedDate.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_needComplishedDate.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_needComplishedDate.Location = new System.Drawing.Point(560, 10);
-            this.lbl_needComplishedDate.Name = "lbl_needComplishedDate";
-            this.lbl_needComplishedDate.Size = new System.Drawing.Size(83, 12);
-            this.lbl_needComplishedDate.TabIndex = 17;
-            this.lbl_needComplishedDate.Text = "要求完日期：";
-            // 
-            // lbl_planComplichedDate
-            // 
-            this.lbl_planComplichedDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_planComplichedDate.AutoSize = true;
-            this.lbl_planComplichedDate.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_planComplichedDate.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_planComplichedDate.Location = new System.Drawing.Point(560, 44);
-            this.lbl_planComplichedDate.Name = "lbl_planComplichedDate";
-            this.lbl_planComplichedDate.Size = new System.Drawing.Size(96, 12);
-            this.lbl_planComplichedDate.TabIndex = 17;
-            this.lbl_planComplichedDate.Text = "预计完成日期：";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label6.Location = new System.Drawing.Point(31, 249);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 12);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "备注：";
-            // 
-            // rtb_memo
-            // 
-            this.rtb_memo.Location = new System.Drawing.Point(81, 241);
-            this.rtb_memo.Name = "rtb_memo";
-            this.rtb_memo.Size = new System.Drawing.Size(814, 28);
-            this.rtb_memo.TabIndex = 24;
-            this.rtb_memo.Text = "";
-            // 
             // txt_itemName
             // 
             this.txt_itemName.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -417,15 +189,6 @@
             this.cmb_requestPerson.Size = new System.Drawing.Size(161, 20);
             this.cmb_requestPerson.TabIndex = 19;
             // 
-            // cmb_reponsiblePerson
-            // 
-            this.cmb_reponsiblePerson.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cmb_reponsiblePerson.FormattingEnabled = true;
-            this.cmb_reponsiblePerson.Location = new System.Drawing.Point(376, 40);
-            this.cmb_reponsiblePerson.Name = "cmb_reponsiblePerson";
-            this.cmb_reponsiblePerson.Size = new System.Drawing.Size(178, 20);
-            this.cmb_reponsiblePerson.TabIndex = 19;
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -433,6 +196,18 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(178, 21);
             this.dateTimePicker1.TabIndex = 20;
+            // 
+            // lbl_needComplishedDate
+            // 
+            this.lbl_needComplishedDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_needComplishedDate.AutoSize = true;
+            this.lbl_needComplishedDate.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_needComplishedDate.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_needComplishedDate.Location = new System.Drawing.Point(560, 10);
+            this.lbl_needComplishedDate.Name = "lbl_needComplishedDate";
+            this.lbl_needComplishedDate.Size = new System.Drawing.Size(83, 12);
+            this.lbl_needComplishedDate.TabIndex = 17;
+            this.lbl_needComplishedDate.Text = "要求完日期：";
             // 
             // dateTimePicker2
             // 
@@ -442,6 +217,39 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(187, 21);
             this.dateTimePicker2.TabIndex = 20;
             // 
+            // lbl_planComplichedDate
+            // 
+            this.lbl_planComplichedDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_planComplichedDate.AutoSize = true;
+            this.lbl_planComplichedDate.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_planComplichedDate.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_planComplichedDate.Location = new System.Drawing.Point(560, 44);
+            this.lbl_planComplichedDate.Name = "lbl_planComplichedDate";
+            this.lbl_planComplichedDate.Size = new System.Drawing.Size(96, 12);
+            this.lbl_planComplichedDate.TabIndex = 17;
+            this.lbl_planComplichedDate.Text = "预计完成日期：";
+            // 
+            // lbl_reponsiblePerson
+            // 
+            this.lbl_reponsiblePerson.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_reponsiblePerson.AutoSize = true;
+            this.lbl_reponsiblePerson.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_reponsiblePerson.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_reponsiblePerson.Location = new System.Drawing.Point(267, 44);
+            this.lbl_reponsiblePerson.Name = "lbl_reponsiblePerson";
+            this.lbl_reponsiblePerson.Size = new System.Drawing.Size(57, 12);
+            this.lbl_reponsiblePerson.TabIndex = 17;
+            this.lbl_reponsiblePerson.Text = "责任人：";
+            // 
+            // cmb_reponsiblePerson
+            // 
+            this.cmb_reponsiblePerson.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmb_reponsiblePerson.FormattingEnabled = true;
+            this.cmb_reponsiblePerson.Location = new System.Drawing.Point(376, 40);
+            this.cmb_reponsiblePerson.Name = "cmb_reponsiblePerson";
+            this.cmb_reponsiblePerson.Size = new System.Drawing.Size(178, 20);
+            this.cmb_reponsiblePerson.TabIndex = 19;
+            // 
             // dateTimePicker3
             // 
             this.dateTimePicker3.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -450,25 +258,186 @@
             this.dateTimePicker3.Size = new System.Drawing.Size(187, 21);
             this.dateTimePicker3.TabIndex = 20;
             // 
+            // rtb_memo
+            // 
+            this.rtb_memo.Location = new System.Drawing.Point(28, 267);
+            this.rtb_memo.Name = "rtb_memo";
+            this.rtb_memo.Size = new System.Drawing.Size(867, 28);
+            this.rtb_memo.TabIndex = 24;
+            this.rtb_memo.Text = "";
+            // 
+            // rtb_summary
+            // 
+            this.rtb_summary.Location = new System.Drawing.Point(28, 319);
+            this.rtb_summary.Name = "rtb_summary";
+            this.rtb_summary.Size = new System.Drawing.Size(867, 72);
+            this.rtb_summary.TabIndex = 24;
+            this.rtb_summary.Text = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label6.Location = new System.Drawing.Point(31, 249);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 12);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "备注：";
+            // 
             // lbl_progress
             // 
             this.lbl_progress.AutoSize = true;
             this.lbl_progress.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lbl_progress.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_progress.Location = new System.Drawing.Point(31, 408);
+            this.lbl_progress.Location = new System.Drawing.Point(31, 400);
             this.lbl_progress.Name = "lbl_progress";
             this.lbl_progress.Size = new System.Drawing.Size(70, 12);
             this.lbl_progress.TabIndex = 23;
             this.lbl_progress.Text = "业务进度：";
             // 
-            // rtb_progress
+            // lbl_summary
             // 
-            this.rtb_progress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.rtb_progress.Location = new System.Drawing.Point(28, 423);
-            this.rtb_progress.Name = "rtb_progress";
-            this.rtb_progress.Size = new System.Drawing.Size(867, 148);
-            this.rtb_progress.TabIndex = 24;
-            this.rtb_progress.Text = "";
+            this.lbl_summary.AutoSize = true;
+            this.lbl_summary.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_summary.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_summary.Location = new System.Drawing.Point(31, 304);
+            this.lbl_summary.Name = "lbl_summary";
+            this.lbl_summary.Size = new System.Drawing.Size(70, 12);
+            this.lbl_summary.TabIndex = 23;
+            this.lbl_summary.Text = "需求描述：";
+            // 
+            // pnl_query
+            // 
+            this.pnl_query.Controls.Add(this.btn_query);
+            this.pnl_query.Controls.Add(this.rtxt_voucherNO);
+            this.pnl_query.Location = new System.Drawing.Point(573, 51);
+            this.pnl_query.Name = "pnl_query";
+            this.pnl_query.Size = new System.Drawing.Size(200, 46);
+            this.pnl_query.TabIndex = 20;
+            // 
+            // rtxt_voucherNO
+            // 
+            this.rtxt_voucherNO.Location = new System.Drawing.Point(47, 15);
+            this.rtxt_voucherNO.Name = "rtxt_voucherNO";
+            this.rtxt_voucherNO.Size = new System.Drawing.Size(150, 28);
+            this.rtxt_voucherNO.TabIndex = 18;
+            this.rtxt_voucherNO.Text = "";
+            // 
+            // lbl_vouchNo
+            // 
+            this.lbl_vouchNo.AutoSize = true;
+            this.lbl_vouchNo.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_vouchNo.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_vouchNo.Location = new System.Drawing.Point(32, 131);
+            this.lbl_vouchNo.Name = "lbl_vouchNo";
+            this.lbl_vouchNo.Size = new System.Drawing.Size(70, 12);
+            this.lbl_vouchNo.TabIndex = 16;
+            this.lbl_vouchNo.Text = "项目编号：";
+            // 
+            // lbl_personCode
+            // 
+            this.lbl_personCode.AutoSize = true;
+            this.lbl_personCode.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_personCode.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_personCode.Location = new System.Drawing.Point(359, 130);
+            this.lbl_personCode.Name = "lbl_personCode";
+            this.lbl_personCode.Size = new System.Drawing.Size(83, 12);
+            this.lbl_personCode.TabIndex = 1;
+            this.lbl_personCode.Text = "处理人姓名：";
+            // 
+            // horizonLine1
+            // 
+            this.horizonLine1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.horizonLine1.LineColor = System.Drawing.SystemColors.ControlText;
+            this.horizonLine1.LineWidth = 1;
+            this.horizonLine1.Location = new System.Drawing.Point(15, 150);
+            this.horizonLine1.Name = "horizonLine1";
+            this.horizonLine1.Size = new System.Drawing.Size(900, 1);
+            this.horizonLine1.TabIndex = 15;
+            // 
+            // dtp_makeDate
+            // 
+            this.dtp_makeDate.Location = new System.Drawing.Point(385, 66);
+            this.dtp_makeDate.Name = "dtp_makeDate";
+            this.dtp_makeDate.Size = new System.Drawing.Size(124, 21);
+            this.dtp_makeDate.TabIndex = 14;
+            // 
+            // lbl_personCodeValue
+            // 
+            this.lbl_personCodeValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbl_personCodeValue.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_personCodeValue.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_personCodeValue.Location = new System.Drawing.Point(448, 130);
+            this.lbl_personCodeValue.Name = "lbl_personCodeValue";
+            this.lbl_personCodeValue.Size = new System.Drawing.Size(130, 14);
+            this.lbl_personCodeValue.TabIndex = 6;
+            // 
+            // lbl_vouchNoValue
+            // 
+            this.lbl_vouchNoValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbl_vouchNoValue.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_vouchNoValue.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_vouchNoValue.Location = new System.Drawing.Point(110, 130);
+            this.lbl_vouchNoValue.Name = "lbl_vouchNoValue";
+            this.lbl_vouchNoValue.Size = new System.Drawing.Size(160, 14);
+            this.lbl_vouchNoValue.TabIndex = 6;
+            // 
+            // lbl_date
+            // 
+            this.lbl_date.AutoSize = true;
+            this.lbl_date.Location = new System.Drawing.Point(322, 70);
+            this.lbl_date.Name = "lbl_date";
+            this.lbl_date.Size = new System.Drawing.Size(59, 12);
+            this.lbl_date.TabIndex = 7;
+            this.lbl_date.Text = "处理日期:";
+            // 
+            // lbl_titel
+            // 
+            this.lbl_titel.AutoSize = true;
+            this.lbl_titel.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_titel.Location = new System.Drawing.Point(304, 19);
+            this.lbl_titel.Name = "lbl_titel";
+            this.lbl_titel.Size = new System.Drawing.Size(227, 29);
+            this.lbl_titel.TabIndex = 12;
+            this.lbl_titel.Text = "协 同 处 理 单";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsb_new,
+            this.tsb_save,
+            this.tsb_abandon,
+            this.tsb_modify,
+            this.tsb_query,
+            this.tsb_previewPrint,
+            this.tsb_print,
+            this.tsb_delete,
+            this.tsb_close});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1056, 25);
+            this.toolStrip1.TabIndex = 7;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // tsb_new
             // 
@@ -567,25 +536,53 @@
             this.btn_query.UseVisualStyleBackColor = false;
             this.btn_query.Click += new System.EventHandler(this.btn_query_Click);
             // 
-            // Frm_record
+            // rtb_progress
+            // 
+            this.rtb_progress.Location = new System.Drawing.Point(28, 424);
+            this.rtb_progress.Name = "rtb_progress";
+            this.rtb_progress.Size = new System.Drawing.Size(867, 75);
+            this.rtb_progress.TabIndex = 24;
+            this.rtb_progress.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(26, 513);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 12);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "业务处理：";
+            // 
+            // rtb_handle
+            // 
+            this.rtb_handle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.rtb_handle.Location = new System.Drawing.Point(28, 537);
+            this.rtb_handle.Name = "rtb_handle";
+            this.rtb_handle.Size = new System.Drawing.Size(867, 75);
+            this.rtb_handle.TabIndex = 24;
+            this.rtb_handle.Text = "";
+            // 
+            // Frm_progress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 625);
+            this.ClientSize = new System.Drawing.Size(1056, 669);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pnl_first);
             this.KeyPreview = true;
-            this.Name = "Frm_record";
-            this.Text = "业务跟踪单";
+            this.Name = "Frm_progress";
+            this.Text = "业务处理单";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm_weighingSettltement_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Frm_weighingSettltement_KeyPress);
             this.pnl_first.ResumeLayout(false);
             this.pnl_first.PerformLayout();
+            this.tlp_content.ResumeLayout(false);
+            this.tlp_content.PerformLayout();
             this.pnl_query.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.tlp_content.ResumeLayout(false);
-            this.tlp_content.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -619,8 +616,6 @@
         private System.Windows.Forms.ToolStripButton tsb_abandon;
         private System.Windows.Forms.ToolStripButton tsb_delete;
         private System.Windows.Forms.Label lbl_personCodeValue;
-        private System.Windows.Forms.Label lbl_status;
-        private System.Windows.Forms.Label lbl_statusValue;
         private System.Windows.Forms.TableLayoutPanel tlp_content;
         private System.Windows.Forms.Label lbl_itmeName;
         private System.Windows.Forms.Label lbl_requestDate;
@@ -639,7 +634,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.Label lbl_progress;
+        private System.Windows.Forms.RichTextBox rtb_handle;
         private System.Windows.Forms.RichTextBox rtb_progress;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -74,6 +74,7 @@
       <DependentUpon>202011220122297_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Modle\EnumModle.cs" />
     <Compile Include="Modle\NoteRecordModle.cs" />
     <Compile Include="Modle\UserModle.cs" />
     <Compile Include="Program.cs" />
@@ -83,6 +84,12 @@
     </Compile>
     <Compile Include="UI\Frm_login.Designer.cs">
       <DependentUpon>Frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Frm_progress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Frm_progress.Designer.cs">
+      <DependentUpon>Frm_progress.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Frm_user.cs">
       <SubType>Form</SubType>
@@ -112,6 +119,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Frm_progress.resx">
+      <DependentUpon>Frm_progress.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Frm_record.resx">
       <DependentUpon>Frm_record.cs</DependentUpon>
     </EmbeddedResource>
