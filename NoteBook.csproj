@@ -69,9 +69,17 @@
     <Compile Include="Frm_main.Designer.cs">
       <DependentUpon>Frm_main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011220122297_first.cs" />
-    <Compile Include="Migrations\202011220122297_first.Designer.cs">
-      <DependentUpon>202011220122297_first.cs</DependentUpon>
+    <Compile Include="Migrations\202011250354350_1.cs" />
+    <Compile Include="Migrations\202011250354350_1.Designer.cs">
+      <DependentUpon>202011250354350_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011250552250_2.cs" />
+    <Compile Include="Migrations\202011250552250_2.Designer.cs">
+      <DependentUpon>202011250552250_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011250609418_3.cs" />
+    <Compile Include="Migrations\202011250609418_3.Designer.cs">
+      <DependentUpon>202011250609418_3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modle\EnumModle.cs" />
@@ -106,8 +114,14 @@
     <EmbeddedResource Include="Frm_main.resx">
       <DependentUpon>Frm_main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011220122297_first.resx">
-      <DependentUpon>202011220122297_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011250354350_1.resx">
+      <DependentUpon>202011250354350_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011250552250_2.resx">
+      <DependentUpon>202011250552250_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011250609418_3.resx">
+      <DependentUpon>202011250609418_3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

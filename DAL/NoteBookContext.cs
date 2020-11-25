@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 
@@ -12,7 +13,7 @@ namespace NoteBook.DAL
     {
         public NoteBookContext() : base(Utility.Sql.Sqlhelper.sqlConnection(Utility.Sql.Sqlhelper.DataSourceType.business), true)
         {
-
+            
         }
 
         public virtual  DbSet<UserModle> Users { get; set; }

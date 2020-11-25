@@ -7,13 +7,13 @@ namespace NoteBook.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class first : IMigrationMetadata
+    public sealed partial class _3 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(first));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_3));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011220122297_first"; }
+            get { return "202011250609418_3"; }
         }
         
         string IMigrationMetadata.Source

@@ -23,6 +23,7 @@ namespace NoteBook.UI
         {
             InitializeComponent();
             this.FormClosed += new FormClosedEventHandler(this.closeParent);
+            initializeDatasource();
             initalizeControlState();
 
         }
@@ -51,13 +52,20 @@ namespace NoteBook.UI
         /// </summary>
         private void initializeDatasource()
         {
+            //申请人数据源
+            cmb_requestPerson.DataSource = new UserService().getUserList().Where<UserModle>(c => c.DateOfCancellation == null)
+                .Select((c) => new { c.userID, c.name }).ToList();
 
-            cmb_requestPerson.DataSource = new CustomerService().getCustomerList().Where<Customer>(c => c.FailuerDate == null).Select((c) => new { c.CusCode, c.CusName }).ToList();
+            cmb_requestPerson.DisplayMember = "name";
+            cmb_requestPerson.ValueMember = "userID";
 
-            cmb_custName.DisplayMember = "CusName";
-            cmb_custName.ValueMember = "CusCode";
+            //责任人数据源
+            cmb_reponsiblePerson.DataSource = new UserService().getUserList().Where<UserModle>(c => c.DateOfCancellation == null)
+                .Select((c) => new { c.userID, c.name }).ToList();
 
-            dtp_incomeDateStart.Value = DateTime.Now.AddDays(-DateTime.Now.Day + 1);
+            cmb_reponsiblePerson.DisplayMember = "name";
+            cmb_reponsiblePerson.ValueMember = "userID";
+
 
 
 
@@ -137,6 +145,9 @@ namespace NoteBook.UI
             tsb_modify.Enabled = false;
 
             lbl_status.Visible = true;
+            lbl_statusValue.Visible = true;
+            lbl_statusValue.Text = voucherStatus.开立.ToString();
+
             //调整单据修改时的控件状态
             if (addOrChangeFlag == addOrChangeMolde.change.ToString())
             {
@@ -144,6 +155,8 @@ namespace NoteBook.UI
                
 
             }
+
+            //单据状态标志
             addOrChangeFlag = addOrChangeMolde.add.ToString();
 
             //清空已填制的数据
@@ -192,13 +205,11 @@ namespace NoteBook.UI
         /// 保存数据
         /// </summary>
         /// <param name="db"></param>
-        /// <param name="w"></param>
-        private void saveData(NoteBookContext db, NoteRecordModle w)
+        /// <param name="m"></param>
+        private void saveData(NoteBookContext db, NoteRecordModle m)
         {
-
-           
-
-
+                      
+            
             //修改数据保存准备
             if (addOrChangeFlag == addOrChangeMolde.change.ToString())
             {
@@ -210,12 +221,25 @@ namespace NoteBook.UI
             if (addOrChangeFlag == addOrChangeMolde.add.ToString())
             {
 
-                w.makeTime = DateTime.Now;
-                w.userID = lbl_personCode.Text;
+                m.voucheNo = lbl_vouchNoValue.Text;
+                m.itemName = txt_itemName.Text;
 
-                w.voucheNo = CurrentUser.userID;
+                m.makeTime = DateTime.Now;
+                m.requesteDate = dtp_requestDate.Value;
+                m.needCompletedDate = dtp_needCompletedDate.Value;
+                m.planCompletedDate = dtp_planCompletedDate.Value;
+               
+                m.userID = lbl_personCodeValue.Text;
+                m.requesteUserID = cmb_requestPerson.SelectedValue.ToString();
+                m.responsibleUserID = cmb_reponsiblePerson.SelectedValue.ToString();
+
+                m.memo = rtb_memo.Text;
+                m.recorder = rtb_summary.Text;
+                m.status = Convert.ToInt32(voucherStatus.开立);
+                
+               
              
-                db.NoteRecords.Add(w);
+                db.NoteRecords.Add(m);
             }
 
 

@@ -25,7 +25,7 @@ namespace NoteBook.DAL
                 new SqlParameter("@queryAll",1 )
             };
 
-            SqlDataReader sqlDataReader = Utility.Sql.Sqlhelper.GetSqlDataReader(sql, DataSourceType.plug, sqlParameters);
+            SqlDataReader sqlDataReader = Utility.Sql.Sqlhelper.GetSqlDataReader(sql, DataSourceType.business, sqlParameters);
             while (sqlDataReader.Read())
             {
                 UserModle m = new UserModle();
