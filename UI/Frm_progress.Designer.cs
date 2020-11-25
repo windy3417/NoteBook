@@ -44,11 +44,15 @@
             this.cmb_reponsiblePerson = new System.Windows.Forms.ComboBox();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.rtb_memo = new System.Windows.Forms.RichTextBox();
+            this.rtb_handle = new System.Windows.Forms.RichTextBox();
+            this.rtb_progress = new System.Windows.Forms.RichTextBox();
             this.rtb_summary = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lbl_progress = new System.Windows.Forms.Label();
             this.lbl_summary = new System.Windows.Forms.Label();
             this.pnl_query = new System.Windows.Forms.Panel();
+            this.btn_query = new System.Windows.Forms.Button();
             this.rtxt_voucherNO = new System.Windows.Forms.RichTextBox();
             this.lbl_vouchNo = new System.Windows.Forms.Label();
             this.lbl_personCode = new System.Windows.Forms.Label();
@@ -59,9 +63,6 @@
             this.lbl_date = new System.Windows.Forms.Label();
             this.lbl_titel = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.tsb_new = new System.Windows.Forms.ToolStripButton();
             this.tsb_save = new System.Windows.Forms.ToolStripButton();
             this.tsb_abandon = new System.Windows.Forms.ToolStripButton();
@@ -71,10 +72,9 @@
             this.tsb_print = new System.Windows.Forms.ToolStripButton();
             this.tsb_delete = new System.Windows.Forms.ToolStripButton();
             this.tsb_close = new System.Windows.Forms.ToolStripButton();
-            this.btn_query = new System.Windows.Forms.Button();
-            this.rtb_progress = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rtb_handle = new System.Windows.Forms.RichTextBox();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.pnl_first.SuspendLayout();
             this.tlp_content.SuspendLayout();
             this.pnl_query.SuspendLayout();
@@ -266,6 +266,23 @@
             this.rtb_memo.TabIndex = 24;
             this.rtb_memo.Text = "";
             // 
+            // rtb_handle
+            // 
+            this.rtb_handle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.rtb_handle.Location = new System.Drawing.Point(28, 537);
+            this.rtb_handle.Name = "rtb_handle";
+            this.rtb_handle.Size = new System.Drawing.Size(867, 75);
+            this.rtb_handle.TabIndex = 24;
+            this.rtb_handle.Text = "";
+            // 
+            // rtb_progress
+            // 
+            this.rtb_progress.Location = new System.Drawing.Point(28, 424);
+            this.rtb_progress.Name = "rtb_progress";
+            this.rtb_progress.Size = new System.Drawing.Size(867, 75);
+            this.rtb_progress.TabIndex = 24;
+            this.rtb_progress.Text = "";
+            // 
             // rtb_summary
             // 
             this.rtb_summary.Location = new System.Drawing.Point(28, 319);
@@ -284,6 +301,17 @@
             this.label6.Size = new System.Drawing.Size(44, 12);
             this.label6.TabIndex = 23;
             this.label6.Text = "备注：";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(26, 513);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 12);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "业务处理：";
             // 
             // lbl_progress
             // 
@@ -315,6 +343,20 @@
             this.pnl_query.Name = "pnl_query";
             this.pnl_query.Size = new System.Drawing.Size(200, 46);
             this.pnl_query.TabIndex = 20;
+            // 
+            // btn_query
+            // 
+            this.btn_query.BackColor = System.Drawing.Color.Transparent;
+            this.btn_query.ForeColor = System.Drawing.Color.Black;
+            this.btn_query.Image = ((System.Drawing.Image)(resources.GetObject("btn_query.Image")));
+            this.btn_query.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_query.Location = new System.Drawing.Point(171, 18);
+            this.btn_query.Name = "btn_query";
+            this.btn_query.Size = new System.Drawing.Size(21, 22);
+            this.btn_query.TabIndex = 17;
+            this.btn_query.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btn_query.UseVisualStyleBackColor = false;
+            this.btn_query.Click += new System.EventHandler(this.btn_query_Click);
             // 
             // rtxt_voucherNO
             // 
@@ -421,32 +463,13 @@
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
-            // printDialog1
-            // 
-            this.printDialog1.UseEXDialog = true;
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
             // tsb_new
             // 
-            this.tsb_new.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsb_new.Image = ((System.Drawing.Image)(resources.GetObject("tsb_new.Image")));
             this.tsb_new.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_new.Name = "tsb_new";
-            this.tsb_new.Size = new System.Drawing.Size(23, 22);
-            this.tsb_new.Text = "新增";
+            this.tsb_new.Size = new System.Drawing.Size(52, 22);
+            this.tsb_new.Text = "参照";
             this.tsb_new.Click += new System.EventHandler(this.Tsb_new_Click);
             // 
             // tsb_save
@@ -522,47 +545,23 @@
             this.tsb_close.Text = "关闭";
             this.tsb_close.Click += new System.EventHandler(this.Tsb_close_Click);
             // 
-            // btn_query
+            // printPreviewDialog1
             // 
-            this.btn_query.BackColor = System.Drawing.Color.Transparent;
-            this.btn_query.ForeColor = System.Drawing.Color.Black;
-            this.btn_query.Image = ((System.Drawing.Image)(resources.GetObject("btn_query.Image")));
-            this.btn_query.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_query.Location = new System.Drawing.Point(171, 18);
-            this.btn_query.Name = "btn_query";
-            this.btn_query.Size = new System.Drawing.Size(21, 22);
-            this.btn_query.TabIndex = 17;
-            this.btn_query.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btn_query.UseVisualStyleBackColor = false;
-            this.btn_query.Click += new System.EventHandler(this.btn_query_Click);
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
-            // rtb_progress
+            // printDialog1
             // 
-            this.rtb_progress.Location = new System.Drawing.Point(28, 424);
-            this.rtb_progress.Name = "rtb_progress";
-            this.rtb_progress.Size = new System.Drawing.Size(867, 75);
-            this.rtb_progress.TabIndex = 24;
-            this.rtb_progress.Text = "";
+            this.printDialog1.UseEXDialog = true;
             // 
-            // label1
+            // printDocument1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(26, 513);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 12);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "业务处理：";
-            // 
-            // rtb_handle
-            // 
-            this.rtb_handle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.rtb_handle.Location = new System.Drawing.Point(28, 537);
-            this.rtb_handle.Name = "rtb_handle";
-            this.rtb_handle.Size = new System.Drawing.Size(867, 75);
-            this.rtb_handle.TabIndex = 24;
-            this.rtb_handle.Text = "";
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // Frm_progress
             // 

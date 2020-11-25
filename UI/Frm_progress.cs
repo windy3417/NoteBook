@@ -104,7 +104,7 @@ namespace NoteBook.UI
         #region 单据增删改查
 
         /// <summary>
-        /// 新增单据
+        /// 参照数据源，新增单据
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -118,9 +118,9 @@ namespace NoteBook.UI
             }
             
             
-            //设定控件与变量状态
+            //设定菜单状态
            
-            pnl_query.Visible = false;
+           
             tsb_save.Enabled = true;
             tsb_abandon.Enabled = true;
             tsb_query.Enabled = false;
@@ -128,7 +128,9 @@ namespace NoteBook.UI
             tsb_previewPrint.Enabled = false;
             tsb_modify.Enabled = false;
 
-         
+            //设定控件与变量状态
+
+            pnl_query.Visible = false;
             //调整单据修改时的控件状态
             if (addOrChangeFlag == addOrChangeMolde.change.ToString())
             {

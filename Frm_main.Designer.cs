@@ -30,12 +30,14 @@
         {
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("协同发起");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("协同处理");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("业务协同", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("协同查询");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("业务协同", new System.Windows.Forms.TreeNode[] {
             treeNode1,
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("新增");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("用户管理", new System.Windows.Forms.TreeNode[] {
-            treeNode4});
+            treeNode2,
+            treeNode3});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("新增");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("用户管理", new System.Windows.Forms.TreeNode[] {
+            treeNode5});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_main));
             this.sc_main = new System.Windows.Forms.SplitContainer();
             this.tv_menu = new System.Windows.Forms.TreeView();
@@ -73,15 +75,18 @@
             treeNode1.Text = "协同发起";
             treeNode2.Name = "NoteBook.UI.Frm_progress";
             treeNode2.Text = "协同处理";
-            treeNode3.Name = "noteManage";
-            treeNode3.Text = "业务协同";
-            treeNode4.Name = "NoteBook.UI.Frm_user";
-            treeNode4.Text = "新增";
-            treeNode5.Name = "userManage";
-            treeNode5.Text = "用户管理";
+            treeNode3.Name = "NoteBook.UI.List.Frm_recordList";
+            treeNode3.Tag = "";
+            treeNode3.Text = "协同查询";
+            treeNode4.Name = "noteManage";
+            treeNode4.Text = "业务协同";
+            treeNode5.Name = "NoteBook.UI.Frm_user";
+            treeNode5.Text = "新增";
+            treeNode6.Name = "userManage";
+            treeNode6.Text = "用户管理";
             this.tv_menu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode5});
+            treeNode4,
+            treeNode6});
             this.tv_menu.Size = new System.Drawing.Size(150, 450);
             this.tv_menu.TabIndex = 0;
             this.tv_menu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tv_menu_AfterSelect);

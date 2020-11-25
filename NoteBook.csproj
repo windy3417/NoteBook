@@ -99,6 +99,12 @@
     <Compile Include="UI\Frm_progress.Designer.cs">
       <DependentUpon>Frm_progress.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Frm_recordRef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Frm_recordRef.Designer.cs">
+      <DependentUpon>Frm_recordRef.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Frm_user.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,12 @@
     </Compile>
     <Compile Include="UI\Frm_record.Designer.cs">
       <DependentUpon>Frm_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\List\Frm_recordList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\List\Frm_recordList.Designer.cs">
+      <DependentUpon>Frm_recordList.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Frm_main.resx">
       <DependentUpon>Frm_main.cs</DependentUpon>
@@ -138,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Frm_record.resx">
       <DependentUpon>Frm_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Frm_recordRef.resx">
+      <DependentUpon>Frm_recordRef.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
