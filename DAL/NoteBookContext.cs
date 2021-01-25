@@ -11,7 +11,8 @@ namespace NoteBook.DAL
 {
     class NoteBookContext:DbContext
     {
-        public NoteBookContext() : base(Utility.Sql.Sqlhelper.sqlConnection(Utility.Sql.Sqlhelper.DataSourceType.business), true)
+        public NoteBookContext() : base(Utility.Sql.Sqlhelper.sqlConnection
+            (Utility.Sql.Sqlhelper.DataSourceType.business), true)
         {
             
         }

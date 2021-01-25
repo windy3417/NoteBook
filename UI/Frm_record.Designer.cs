@@ -50,20 +50,19 @@
             this.lbl_progress = new System.Windows.Forms.Label();
             this.lbl_summary = new System.Windows.Forms.Label();
             this.pnl_query = new System.Windows.Forms.Panel();
+            this.btn_query = new System.Windows.Forms.Button();
             this.rtxt_voucherNO = new System.Windows.Forms.RichTextBox();
             this.lbl_vouchNo = new System.Windows.Forms.Label();
             this.lbl_status = new System.Windows.Forms.Label();
-            this.lbl_personCode = new System.Windows.Forms.Label();
+            this.lbl_userID = new System.Windows.Forms.Label();
+            this.horizonLine1 = new Utility.UControl.HorizonLine();
             this.dtp_makeDate = new System.Windows.Forms.DateTimePicker();
             this.lbl_statusValue = new System.Windows.Forms.Label();
-            this.lbl_personCodeValue = new System.Windows.Forms.Label();
+            this.lbl_userName = new System.Windows.Forms.Label();
             this.lbl_vouchNoValue = new System.Windows.Forms.Label();
             this.lbl_date = new System.Windows.Forms.Label();
             this.lbl_titel = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.tsb_new = new System.Windows.Forms.ToolStripButton();
             this.tsb_save = new System.Windows.Forms.ToolStripButton();
             this.tsb_abandon = new System.Windows.Forms.ToolStripButton();
@@ -73,8 +72,9 @@
             this.tsb_print = new System.Windows.Forms.ToolStripButton();
             this.tsb_delete = new System.Windows.Forms.ToolStripButton();
             this.tsb_close = new System.Windows.Forms.ToolStripButton();
-            this.btn_query = new System.Windows.Forms.Button();
-            this.horizonLine1 = new Utility.UControl.HorizonLine();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.pnl_first.SuspendLayout();
             this.tlp_content.SuspendLayout();
             this.pnl_query.SuspendLayout();
@@ -94,11 +94,11 @@
             this.pnl_first.Controls.Add(this.pnl_query);
             this.pnl_first.Controls.Add(this.lbl_vouchNo);
             this.pnl_first.Controls.Add(this.lbl_status);
-            this.pnl_first.Controls.Add(this.lbl_personCode);
+            this.pnl_first.Controls.Add(this.lbl_userID);
             this.pnl_first.Controls.Add(this.horizonLine1);
             this.pnl_first.Controls.Add(this.dtp_makeDate);
             this.pnl_first.Controls.Add(this.lbl_statusValue);
-            this.pnl_first.Controls.Add(this.lbl_personCodeValue);
+            this.pnl_first.Controls.Add(this.lbl_userName);
             this.pnl_first.Controls.Add(this.lbl_vouchNoValue);
             this.pnl_first.Controls.Add(this.lbl_date);
             this.pnl_first.Controls.Add(this.lbl_titel);
@@ -325,6 +325,20 @@
             this.pnl_query.Size = new System.Drawing.Size(200, 46);
             this.pnl_query.TabIndex = 20;
             // 
+            // btn_query
+            // 
+            this.btn_query.BackColor = System.Drawing.Color.Transparent;
+            this.btn_query.ForeColor = System.Drawing.Color.Black;
+            this.btn_query.Image = ((System.Drawing.Image)(resources.GetObject("btn_query.Image")));
+            this.btn_query.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_query.Location = new System.Drawing.Point(171, 18);
+            this.btn_query.Name = "btn_query";
+            this.btn_query.Size = new System.Drawing.Size(21, 22);
+            this.btn_query.TabIndex = 17;
+            this.btn_query.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btn_query.UseVisualStyleBackColor = false;
+            this.btn_query.Click += new System.EventHandler(this.btn_query_Click);
+            // 
             // rtxt_voucherNO
             // 
             this.rtxt_voucherNO.Location = new System.Drawing.Point(47, 15);
@@ -355,16 +369,27 @@
             this.lbl_status.TabIndex = 1;
             this.lbl_status.Text = "状态：";
             // 
-            // lbl_personCode
+            // lbl_userID
             // 
-            this.lbl_personCode.AutoSize = true;
-            this.lbl_personCode.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_personCode.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbl_personCode.Location = new System.Drawing.Point(349, 114);
-            this.lbl_personCode.Name = "lbl_personCode";
-            this.lbl_personCode.Size = new System.Drawing.Size(83, 12);
-            this.lbl_personCode.TabIndex = 1;
-            this.lbl_personCode.Text = "记录人姓名：";
+            this.lbl_userID.AutoSize = true;
+            this.lbl_userID.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_userID.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_userID.Location = new System.Drawing.Point(349, 114);
+            this.lbl_userID.Name = "lbl_userID";
+            this.lbl_userID.Size = new System.Drawing.Size(83, 12);
+            this.lbl_userID.TabIndex = 1;
+            this.lbl_userID.Text = "记录人姓名：";
+            // 
+            // horizonLine1
+            // 
+            this.horizonLine1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.horizonLine1.LineColor = System.Drawing.SystemColors.ControlText;
+            this.horizonLine1.LineWidth = 1;
+            this.horizonLine1.Location = new System.Drawing.Point(15, 133);
+            this.horizonLine1.Name = "horizonLine1";
+            this.horizonLine1.Size = new System.Drawing.Size(900, 1);
+            this.horizonLine1.TabIndex = 15;
             // 
             // dtp_makeDate
             // 
@@ -383,15 +408,15 @@
             this.lbl_statusValue.Size = new System.Drawing.Size(69, 14);
             this.lbl_statusValue.TabIndex = 6;
             // 
-            // lbl_personCodeValue
+            // lbl_userName
             // 
-            this.lbl_personCodeValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbl_personCodeValue.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_personCodeValue.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_personCodeValue.Location = new System.Drawing.Point(438, 113);
-            this.lbl_personCodeValue.Name = "lbl_personCodeValue";
-            this.lbl_personCodeValue.Size = new System.Drawing.Size(130, 14);
-            this.lbl_personCodeValue.TabIndex = 6;
+            this.lbl_userName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbl_userName.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_userName.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_userName.Location = new System.Drawing.Point(438, 113);
+            this.lbl_userName.Name = "lbl_userName";
+            this.lbl_userName.Size = new System.Drawing.Size(130, 14);
+            this.lbl_userName.TabIndex = 6;
             // 
             // lbl_vouchNoValue
             // 
@@ -439,24 +464,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(1056, 25);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
-            // printDialog1
-            // 
-            this.printDialog1.UseEXDialog = true;
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // tsb_new
             // 
@@ -541,30 +548,23 @@
             this.tsb_close.Text = "关闭";
             this.tsb_close.Click += new System.EventHandler(this.Tsb_close_Click);
             // 
-            // btn_query
+            // printPreviewDialog1
             // 
-            this.btn_query.BackColor = System.Drawing.Color.Transparent;
-            this.btn_query.ForeColor = System.Drawing.Color.Black;
-            this.btn_query.Image = ((System.Drawing.Image)(resources.GetObject("btn_query.Image")));
-            this.btn_query.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_query.Location = new System.Drawing.Point(171, 18);
-            this.btn_query.Name = "btn_query";
-            this.btn_query.Size = new System.Drawing.Size(21, 22);
-            this.btn_query.TabIndex = 17;
-            this.btn_query.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btn_query.UseVisualStyleBackColor = false;
-            this.btn_query.Click += new System.EventHandler(this.btn_query_Click);
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
-            // horizonLine1
+            // printDialog1
             // 
-            this.horizonLine1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.horizonLine1.LineColor = System.Drawing.SystemColors.ControlText;
-            this.horizonLine1.LineWidth = 1;
-            this.horizonLine1.Location = new System.Drawing.Point(15, 133);
-            this.horizonLine1.Name = "horizonLine1";
-            this.horizonLine1.Size = new System.Drawing.Size(900, 1);
-            this.horizonLine1.TabIndex = 15;
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // Frm_record
             // 
@@ -596,7 +596,7 @@
         private System.Windows.Forms.DateTimePicker dtp_makeDate;
         private System.Windows.Forms.Label lbl_date;
         private System.Windows.Forms.Label lbl_titel;
-        private System.Windows.Forms.Label lbl_personCode;
+        private System.Windows.Forms.Label lbl_userID;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.PrintDialog printDialog1;
@@ -617,7 +617,7 @@
         private System.Windows.Forms.ToolStripButton tsb_modify;
         private System.Windows.Forms.ToolStripButton tsb_abandon;
         private System.Windows.Forms.ToolStripButton tsb_delete;
-        private System.Windows.Forms.Label lbl_personCodeValue;
+        private System.Windows.Forms.Label lbl_userName;
         private System.Windows.Forms.Label lbl_status;
         private System.Windows.Forms.Label lbl_statusValue;
         private System.Windows.Forms.TableLayoutPanel tlp_content;

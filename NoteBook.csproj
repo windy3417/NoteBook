@@ -62,24 +62,22 @@
   <ItemGroup>
     <Compile Include="Common\CreateForm.cs" />
     <Compile Include="DAL\NoteBookContext.cs" />
+    <Compile Include="DAL\RecordService.cs" />
     <Compile Include="DAL\UserService.cs" />
+    <Compile Include="EventArguments\CoordinationEventArgs.cs" />
     <Compile Include="Frm_main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_main.Designer.cs">
       <DependentUpon>Frm_main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011250354350_1.cs" />
-    <Compile Include="Migrations\202011250354350_1.Designer.cs">
-      <DependentUpon>202011250354350_1.cs</DependentUpon>
+    <Compile Include="Migrations\202011270659328_first.cs" />
+    <Compile Include="Migrations\202011270659328_first.Designer.cs">
+      <DependentUpon>202011270659328_first.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011250552250_2.cs" />
-    <Compile Include="Migrations\202011250552250_2.Designer.cs">
-      <DependentUpon>202011250552250_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011250609418_3.cs" />
-    <Compile Include="Migrations\202011250609418_3.Designer.cs">
-      <DependentUpon>202011250609418_3.cs</DependentUpon>
+    <Compile Include="Migrations\202101250634488_20210125.cs" />
+    <Compile Include="Migrations\202101250634488_20210125.Designer.cs">
+      <DependentUpon>202101250634488_20210125.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modle\EnumModle.cs" />
@@ -99,12 +97,6 @@
     <Compile Include="UI\Frm_progress.Designer.cs">
       <DependentUpon>Frm_progress.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Frm_recordRef.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Frm_recordRef.Designer.cs">
-      <DependentUpon>Frm_recordRef.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Frm_user.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,17 +115,20 @@
     <Compile Include="UI\List\Frm_recordList.Designer.cs">
       <DependentUpon>Frm_recordList.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\List\Frm_recordRef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\List\Frm_recordRef.Designer.cs">
+      <DependentUpon>Frm_recordRef.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Frm_main.resx">
       <DependentUpon>Frm_main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011250354350_1.resx">
-      <DependentUpon>202011250354350_1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011270659328_first.resx">
+      <DependentUpon>202011270659328_first.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011250552250_2.resx">
-      <DependentUpon>202011250552250_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011250609418_3.resx">
-      <DependentUpon>202011250609418_3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101250634488_20210125.resx">
+      <DependentUpon>202101250634488_20210125.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -151,7 +146,7 @@
     <EmbeddedResource Include="UI\Frm_record.resx">
       <DependentUpon>Frm_record.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Frm_recordRef.resx">
+    <EmbeddedResource Include="UI\List\Frm_recordRef.resx">
       <DependentUpon>Frm_recordRef.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
@@ -174,6 +169,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\effect.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giveUpAudit.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

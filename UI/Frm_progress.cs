@@ -14,6 +14,9 @@ using NoteBook.DAL;
 using NoteBook.Modle;
 using NoteBook.Properties;
 using static NoteBook.Modle.EnumModle;
+using System.Runtime.Remoting;
+using Utility.UI;
+using NoteBook.UI.List;
 
 namespace NoteBook.UI
 {
@@ -116,11 +119,15 @@ namespace NoteBook.UI
             {
                 
             }
+
+            Frm_recordRef f = new Frm_recordRef();
+            f.ShowDialog();
             
-            
+
+
             //设定菜单状态
-           
-           
+
+
             tsb_save.Enabled = true;
             tsb_abandon.Enabled = true;
             tsb_query.Enabled = false;
@@ -175,7 +182,7 @@ namespace NoteBook.UI
             {
                 using (var db = new NoteBookContext())
                 {
-                    NoteRecordModle w = db.NoteRecords.Where(s => s.voucheNo == lbl_vouchNoValue.Text).FirstOrDefault();
+                    NoteRecordModle w = db.NoteRecords.Where(s => s.voucherNo == lbl_vouchNoValue.Text).FirstOrDefault();
                     saveData(db, w);
                 }
             }
@@ -207,7 +214,7 @@ namespace NoteBook.UI
                 w.makeTime = DateTime.Now;
                 w.userID = lbl_personCode.Text;
 
-                w.voucheNo = CurrentUser.userID;
+                w.voucherNo = CurrentUser.userID;
              
                 db.NoteRecords.Add(w);
             }
@@ -274,9 +281,9 @@ namespace NoteBook.UI
             {
                 var q = from w in db.NoteRecords
                         //where (w.vocherNO.Max())
-                        select new {  w.voucheNo };
+                        select new {  w.voucherNo };
                 //赋值时注意对类型q进行转换， 不能直接写成rtxt_voucherNO.Text = q
-                rtxt_voucherNO.Text = (q.Select(s => s.voucheNo)).Max().ToString();
+                rtxt_voucherNO.Text = (q.Select(s => s.voucherNo)).Max().ToString();
                 btn_query.PerformClick();
                 tsb_previewPrint.Enabled = true;
                 tsb_print.Enabled = true;
@@ -304,13 +311,13 @@ namespace NoteBook.UI
                             join p in db.Users on q.userID equals p.userID.ToString()
                           
 
-                            where q.voucheNo == rtxt_voucherNO.Text
+                            where q.voucherNo == rtxt_voucherNO.Text
 
                             select new
                             {
                                 q.makeTime,
                                
-                                q.voucheNo,
+                                q.voucherNo,
                                
                                 p.userID,
                                 p.name,
@@ -318,7 +325,7 @@ namespace NoteBook.UI
                             };
                 foreach (var item in query)
                 {
-                    lbl_vouchNoValue.Text = item.voucheNo;
+                    lbl_vouchNoValue.Text = item.voucherNo;
                     //如果查询有结果，则启用修改菜单与删除菜单
                     if (lbl_vouchNoValue.Text != "" & lbl_vouchNoValue.Text != null)
                     {
@@ -362,7 +369,7 @@ namespace NoteBook.UI
                         using (var db = new NoteBookContext())
                         {
                             var del = (from d in db.NoteRecords
-                                       where (d.voucheNo == lbl_vouchNoValue.Text)
+                                       where (d.voucherNo == lbl_vouchNoValue.Text)
                                        select d).ToList(); ;
                             //移除数据库的数据
                             db.NoteRecords.Remove(del[0]);

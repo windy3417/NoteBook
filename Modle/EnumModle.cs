@@ -7,7 +7,7 @@ namespace NoteBook.Modle
 {
    public static class EnumModle
     {
-        public  enum voucherStatus
+        public  enum VoucherStatus
         {
             开立=1,
             处理=2,

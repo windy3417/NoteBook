@@ -3,16 +3,16 @@ namespace NoteBook.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class _3 : DbMigration
+    public partial class _20210125 : DbMigration
     {
         public override void Up()
         {
-            DropColumn("dbo.NoteRecords", "Summary");
+            AlterColumn("dbo.NoteRecords", "status", c => c.String(nullable: false));
         }
         
         public override void Down()
         {
-            AddColumn("dbo.NoteRecords", "Summary", c => c.String());
+            AlterColumn("dbo.NoteRecords", "status", c => c.Int(nullable: false));
         }
     }
 }
