@@ -470,7 +470,7 @@
             this.tsb_new.Name = "tsb_new";
             this.tsb_new.Size = new System.Drawing.Size(52, 22);
             this.tsb_new.Text = "参照";
-            this.tsb_new.Click += new System.EventHandler(this.Tsb_new_Click);
+            this.tsb_new.Click += new System.EventHandler(this.Tsb_ref_Click);
             // 
             // tsb_save
             // 
