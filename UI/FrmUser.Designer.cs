@@ -1,6 +1,6 @@
 ﻿namespace NoteBook.UI
 {
-    partial class Frm_login
+    partial class FrmUser
     {
         /// <summary>
         /// 必需的设计器变量。

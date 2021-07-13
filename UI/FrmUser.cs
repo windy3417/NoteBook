@@ -12,9 +12,9 @@ using Utility;
 
 namespace NoteBook.UI
 {
-    public partial class Frm_user : Utility.UI.Frm_baseUser
+    public partial class FrmUser : Utility.UI.Frm_baseUser
     {
-        public Frm_user()
+        public FrmUser()
         {
             InitializeComponent();
         }

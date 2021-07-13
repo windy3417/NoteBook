@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 using System.Drawing.Drawing2D;
-using Utility.Modle;
+using Utility.Model;
 using System.Drawing.Printing;
 using NoteBook.DAL;
 using NoteBook.Modle;

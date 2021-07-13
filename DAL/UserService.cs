@@ -6,7 +6,7 @@ using NoteBook.Modle;
 using System.Data;
 using System.Data.SqlClient;
 using static Utility.Sql.Sqlhelper;
-using Utility.Modle;
+using Utility.Model;
 
 namespace NoteBook.DAL
 {

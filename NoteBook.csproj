@@ -45,6 +45,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,15 +63,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CreateForm.cs" />
+    <Compile Include="DAL\ManageContext.cs" />
+    <Compile Include="DAL\Model\xm_plug_v_POList.cs" />
     <Compile Include="DAL\NoteBookContext.cs" />
     <Compile Include="DAL\RecordService.cs" />
     <Compile Include="DAL\UserService.cs" />
     <Compile Include="EventArguments\CoordinationEventArgs.cs" />
-    <Compile Include="Frm_main.cs">
+    <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_main.Designer.cs">
-      <DependentUpon>Frm_main.cs</DependentUpon>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202011270659328_first.cs" />
     <Compile Include="Migrations\202011270659328_first.Designer.cs">
@@ -85,11 +89,23 @@
     <Compile Include="Modle\UserModle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\Frm_login.cs">
+    <Compile Include="UI\Contract\FrmPoList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Frm_login.Designer.cs">
-      <DependentUpon>Frm_login.cs</DependentUpon>
+    <Compile Include="UI\Contract\FrmPoList.Designer.cs">
+      <DependentUpon>FrmPoList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmLoginConfigDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmLoginConfigDB.Designer.cs">
+      <DependentUpon>FrmLoginConfigDB.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Frm_progress.cs">
       <SubType>Form</SubType>
@@ -97,11 +113,11 @@
     <Compile Include="UI\Frm_progress.Designer.cs">
       <DependentUpon>Frm_progress.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Frm_user.cs">
+    <Compile Include="UI\FrmUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Frm_user.Designer.cs">
-      <DependentUpon>Frm_user.cs</DependentUpon>
+    <Compile Include="UI\FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Frm_record.cs">
       <SubType>Form</SubType>
@@ -121,8 +137,8 @@
     <Compile Include="UI\List\Frm_recordRef.Designer.cs">
       <DependentUpon>Frm_recordRef.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Frm_main.resx">
-      <DependentUpon>Frm_main.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011270659328_first.resx">
       <DependentUpon>202011270659328_first.cs</DependentUpon>
@@ -140,6 +156,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Contract\FrmPoList.resx">
+      <DependentUpon>FrmPoList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmLoginConfigDB.resx">
+      <DependentUpon>FrmLoginConfigDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Frm_progress.resx">
       <DependentUpon>Frm_progress.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,5 +204,12 @@
   <ItemGroup>
     <None Include="Resources\giveUpAudit.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move up.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\query detail.bmp" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

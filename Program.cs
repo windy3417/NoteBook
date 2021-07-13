@@ -16,17 +16,23 @@ namespace NoteBook
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Frm_login frm_Login = new Frm_login();
+            FrmLogin frm_Login = new FrmLogin();
 
             frm_Login.ShowDialog();
             if (frm_Login.DialogResult == DialogResult.OK)
             {
-                Application.Run(new Frm_main());
+                Application.Run(new FrmMain());
             }
             else
             {
                 Application.Exit();
             }
+
+            //FrmMain frmMain = new FrmMain();
+            //frmMain.Show();
+
+            //Application.Run(new FrmMain());
+
         }
     }
 }

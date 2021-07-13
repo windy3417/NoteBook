@@ -13,9 +13,9 @@ using Utility.UI;
 
 namespace NoteBook
 {
-    public partial class Frm_main : Form
+    public partial class FrmMain : Form
     {
-        public Frm_main()
+        public FrmMain()
         {
             InitializeComponent();
             initializeControlState();
