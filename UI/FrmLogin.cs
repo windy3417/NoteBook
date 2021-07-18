@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Utility;
 using System.Configuration;
 using Utility.Model;
+using NoteBook.DAL;
 
 namespace NoteBook.UI
 {
@@ -125,12 +126,17 @@ namespace NoteBook.UI
         /// <param name="user"></param>
         /// <param name="pwd"></param>
         /// <returns></returns>
-        protected virtual bool checkPwd(string user,string pwd)
+         bool checkPwd(string user,string pwd)
         {
+
+            if (new UserService().loginCheckWithSqlparameters(user, pwd))
+            {
+                return true;
+            }
 
             return false;
 
-            
+
         }
 
      

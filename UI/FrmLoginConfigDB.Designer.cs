@@ -568,7 +568,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLoginConfigDB";
             this.Text = "数据库配置";
-            this.Load += new System.EventHandler(this.Frm_DoubleDataBaseConfig_Load);
+            this.Load += new System.EventHandler(this.FrmDbConfig_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gb_plugDataBase.ResumeLayout(false);

@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using NoteBook.Modle;
-using System.IO;
 
 namespace NoteBook.UI.List
 {
@@ -19,126 +18,82 @@ namespace NoteBook.UI.List
         {
             InitializeComponent();
             initializeControlState();
-            
+            intializeControlsDataSource();
         }
 
-        #region 初始化控件
+        //#region 自定义事件
+
+        ///// <summary>
+        ///// 定义事件
+        ///// </summary>
+        //public event EventHandler<CoordinationEventArgs> Coordination;
+
+
+
+
+        ///// <summary>
+        ///// 事件处理方法
+        ///// 调用端实例化事件委托后就执行该方法
+        ///// authorizPass?本质上相当于执行方法时的第二次判断
+        ///// 引发事件是执行事件处理方法的第一次判断
+        ///// </summary>
+        ///// <param name="authorizationEventArgs"></param>
+        //protected virtual void onCoordination(CoordinationEventArgs coordinationEventArgs)
+        //{
+        //    authorizPass?.Invoke(this, authorizationEventArgs);
+        //}
+
+
+
+        ///// <summary>
+        ///// 引发事件
+        ///// 双击元格则传送数据给协同处理表
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void dgv_recordRef_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        //{
+
+        //    //引发事件并传递事件包含的数据，该事件检验用户名密码是否正确
+        //    CoordinationEventArgs coordinationEventArgs = new CoordinationEventArgs();
+        //    authorizationEventArgs.userAndPwdRight = true;
+        //    onAuthorizPass(authorizationEventArgs);
+
+        //    this.Close();
+
+
+
+
+        //}
+
+        //#endregion
+
 
         private void initializeControlState()
         {
             dgv_recordRef.AutoGenerateColumns = false;
-            this.StartPosition = FormStartPosition.CenterScreen;
+        }
 
-        }        
-
+        //void InitializeControlDataSource()
+        //{
+        //    List<NoteRecordModle> noteRecordList = new RecordService().GetNoteRecordList();
+        //    dgv_recordRef.DataSource = noteRecordList;
+            
+        //}
 
         void intializeControlsDataSource()
         {
-
             using (var db = new NoteBookContext())
             {
+                var query = from q in new RecordService().GetNoteRecordList()
+                            join u in db.Users on q.userID equals u.userID
+                            select new { q.requesteDate, q.voucherNo, q.itemName  , u.name };
 
-              
-                var query = from q in new RecordService().GetNoteRecordRefList()
-                            join u in new UserService().getUserList() on q.requesteUserID equals u.userID
-                            select new
-                            {
-                                q.requesteDate,
-                                u.name,
-                                q.voucherNo,
-                                q.itemName
-                                
-                            };
-
-                this.ColumnRequesteDate.DataPropertyName = "requesteDate";
-                this.ColumnVoucherNo.DataPropertyName = "voucherNo";
-                this.ColumnReuquestName.DataPropertyName = "name";
-                this.ColumnItemName.DataPropertyName = "itemName";
 
                 dgv_recordRef.DataSource = query.ToList();
 
             }
-
-
         }
 
-
-        #endregion
-
-        //使用该委托进行数据传递待探究→何时触发传递？与事件写法一致
-        public Action< string> ActionRecord;
-
-        
-             #region 内部方法
-
-
-        private static void logWrite(List<string> lt)
-        {
-            string path = @"MyTest2.txt";
-
-            //Create the file.
-            using (FileStream fs = new FileStream(path, FileMode.Append))
-            {
-                using (StreamWriter sw = new StreamWriter(fs))
-                {
-                    foreach (String LT in lt)
-
-                        sw.WriteLine("{0}\t,{1}", DateTime.Now.ToString(), LT);
-
-                }
-            }
-        }
-
-        /// <summary>
-        /// 写日志
-        /// </summary>
-        /// <param name="logString"></param>
-        private static void logWrite(string logString)
-        {
-            string path = @"MyTest2.txt";
-
-            //Create the file.
-            using (FileStream fs = new FileStream(path, FileMode.Append))
-            {
-                using (StreamWriter sw = new StreamWriter(fs))
-                {
-                   
-
-                        sw.WriteLine("{0}\t,{1}", DateTime.Now.ToString(), logString);
-
-                }
-            }
-        }
-        #endregion
-
-        /// <summary>
-        /// 先显示窗体，再加载数据，以告诉用户程序在响应当中
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Frm_recordRef_Shown(object sender, EventArgs e)
-        {
-                       
-            intializeControlsDataSource();
-           
-        }
-
-        private void tsb_certain_Click(object sender, EventArgs e)
-        {
-            if (dgv_recordRef.SelectedRows.Count>=0)
-            {
-                if (ActionRecord!=null)
-                {
-                    ActionRecord.Invoke(dgv_recordRef.CurrentRow.Cells["ColumnVoucherNo"].Value.ToString());
-                }
-
-                this.Close();
-               
-                
-            }
-        }
-
-
-        
     }
 }

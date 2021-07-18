@@ -55,6 +55,7 @@
             this.lbl_vouchNo = new System.Windows.Forms.Label();
             this.lbl_status = new System.Windows.Forms.Label();
             this.lbl_userID = new System.Windows.Forms.Label();
+            this.horizonLine1 = new Utility.UControl.HorizonLine();
             this.dtp_makeDate = new System.Windows.Forms.DateTimePicker();
             this.lbl_statusValue = new System.Windows.Forms.Label();
             this.lbl_userName = new System.Windows.Forms.Label();
@@ -74,7 +75,6 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.horizonLine1 = new Utility.UControl.HorizonLine();
             this.pnl_first.SuspendLayout();
             this.tlp_content.SuspendLayout();
             this.pnl_query.SuspendLayout();
@@ -380,6 +380,17 @@
             this.lbl_userID.TabIndex = 1;
             this.lbl_userID.Text = "记录人姓名：";
             // 
+            // horizonLine1
+            // 
+            this.horizonLine1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.horizonLine1.LineColor = System.Drawing.SystemColors.ControlText;
+            this.horizonLine1.LineWidth = 1;
+            this.horizonLine1.Location = new System.Drawing.Point(15, 133);
+            this.horizonLine1.Name = "horizonLine1";
+            this.horizonLine1.Size = new System.Drawing.Size(900, 1);
+            this.horizonLine1.TabIndex = 15;
+            // 
             // dtp_makeDate
             // 
             this.dtp_makeDate.Location = new System.Drawing.Point(385, 66);
@@ -456,10 +467,11 @@
             // 
             // tsb_new
             // 
+            this.tsb_new.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsb_new.Image = ((System.Drawing.Image)(resources.GetObject("tsb_new.Image")));
             this.tsb_new.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_new.Name = "tsb_new";
-            this.tsb_new.Size = new System.Drawing.Size(52, 22);
+            this.tsb_new.Size = new System.Drawing.Size(23, 22);
             this.tsb_new.Text = "新增";
             this.tsb_new.Click += new System.EventHandler(this.Tsb_new_Click);
             // 
@@ -553,17 +565,6 @@
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // horizonLine1
-            // 
-            this.horizonLine1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.horizonLine1.LineColor = System.Drawing.SystemColors.ControlText;
-            this.horizonLine1.LineWidth = 1;
-            this.horizonLine1.Location = new System.Drawing.Point(15, 133);
-            this.horizonLine1.Name = "horizonLine1";
-            this.horizonLine1.Size = new System.Drawing.Size(900, 1);
-            this.horizonLine1.TabIndex = 15;
             // 
             // Frm_record
             // 

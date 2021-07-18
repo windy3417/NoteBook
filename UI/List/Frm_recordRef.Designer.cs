@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.dgv_recordRef = new System.Windows.Forms.DataGridView();
-            this.ColumnRequesteDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnReuquestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnVoucherNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.requesteDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.voucherNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsb_certain = new System.Windows.Forms.ToolStripButton();
             this.tsb_cancel = new System.Windows.Forms.ToolStripButton();
@@ -47,10 +47,10 @@
             this.dgv_recordRef.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_recordRef.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_recordRef.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnRequesteDate,
-            this.ColumnReuquestName,
-            this.ColumnVoucherNo,
-            this.ColumnItemName});
+            this.requesteDate,
+            this.voucherNo,
+            this.itemName,
+            this.name});
             this.dgv_recordRef.Location = new System.Drawing.Point(12, 36);
             this.dgv_recordRef.Name = "dgv_recordRef";
             this.dgv_recordRef.ReadOnly = true;
@@ -58,29 +58,33 @@
             this.dgv_recordRef.Size = new System.Drawing.Size(776, 402);
             this.dgv_recordRef.TabIndex = 0;
             // 
-            // ColumnRequesteDate
+            // requesteDate
             // 
-            this.ColumnRequesteDate.HeaderText = "申请日期";
-            this.ColumnRequesteDate.Name = "ColumnRequesteDate";
-            this.ColumnRequesteDate.ReadOnly = true;
+            this.requesteDate.DataPropertyName = "requestDate";
+            this.requesteDate.HeaderText = "申请日期";
+            this.requesteDate.Name = "requesteDate";
+            this.requesteDate.ReadOnly = true;
             // 
-            // ColumnReuquestName
+            // voucherNo
             // 
-            this.ColumnReuquestName.HeaderText = "申请人";
-            this.ColumnReuquestName.Name = "ColumnReuquestName";
-            this.ColumnReuquestName.ReadOnly = true;
+            this.voucherNo.DataPropertyName = "voucherNo";
+            this.voucherNo.HeaderText = "项目编号";
+            this.voucherNo.Name = "voucherNo";
+            this.voucherNo.ReadOnly = true;
             // 
-            // ColumnVoucherNo
+            // itemName
             // 
-            this.ColumnVoucherNo.HeaderText = "项目编号";
-            this.ColumnVoucherNo.Name = "ColumnVoucherNo";
-            this.ColumnVoucherNo.ReadOnly = true;
+            this.itemName.DataPropertyName = "itemName";
+            this.itemName.HeaderText = "项目名称";
+            this.itemName.Name = "itemName";
+            this.itemName.ReadOnly = true;
             // 
-            // ColumnItemName
+            // name
             // 
-            this.ColumnItemName.HeaderText = "项目名称";
-            this.ColumnItemName.Name = "ColumnItemName";
-            this.ColumnItemName.ReadOnly = true;
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "申请人";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // toolStrip1
             // 
@@ -100,7 +104,6 @@
             this.tsb_certain.Name = "tsb_certain";
             this.tsb_certain.Size = new System.Drawing.Size(52, 22);
             this.tsb_certain.Text = "确认";
-            this.tsb_certain.Click += new System.EventHandler(this.tsb_certain_Click);
             // 
             // tsb_cancel
             // 
@@ -119,7 +122,6 @@
             this.Controls.Add(this.dgv_recordRef);
             this.Name = "Frm_recordRef";
             this.Text = "协同参照";
-            this.Shown += new System.EventHandler(this.Frm_recordRef_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_recordRef)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -131,12 +133,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_recordRef;
+        private System.Windows.Forms.DataGridViewTextBoxColumn requesteDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn voucherNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsb_certain;
         private System.Windows.Forms.ToolStripButton tsb_cancel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRequesteDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnReuquestName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnVoucherNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnItemName;
     }
 }

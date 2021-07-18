@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tsbQueryPO = new System.Windows.Forms.ToolStripButton();
             this.tsbAttachment = new System.Windows.Forms.ToolStripButton();
             this.tsbClose = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -41,7 +41,7 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.tsbQueryPO,
             this.tsbAttachment,
             this.tsbClose});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -50,13 +50,14 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // tsbQueryPO
             // 
-            this.toolStripButton1.Image = global::NoteBook.Properties.Resources.query_detail;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButton1.Text = "查询";
+            this.tsbQueryPO.Image = global::NoteBook.Properties.Resources.query_detail;
+            this.tsbQueryPO.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbQueryPO.Name = "tsbQueryPO";
+            this.tsbQueryPO.Size = new System.Drawing.Size(52, 22);
+            this.tsbQueryPO.Text = "查询";
+            this.tsbQueryPO.Click += new System.EventHandler(this.tsbQueryPO_Click);
             // 
             // tsbAttachment
             // 
@@ -95,8 +96,9 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 172);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 210);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 266);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
             // FrmPoList
             // 
@@ -119,7 +121,7 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton tsbQueryPO;
         private System.Windows.Forms.ToolStripButton tsbAttachment;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;

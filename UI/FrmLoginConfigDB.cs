@@ -75,7 +75,7 @@ namespace NoteBook.UI
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void Frm_DoubleDataBaseConfig_Load(object sender, EventArgs e)
+        private void FrmDbConfig_Load(object sender, EventArgs e)
         {
             this.readDataBase();
         }
@@ -115,7 +115,7 @@ namespace NoteBook.UI
         private void readDataBase()
         {
             string businessDbConnectStringKey = DataSourceType.business.ToString();
-            string plugDbConnectStringKey = DataSourceType.business.ToString();
+            string plugDbConnectStringKey = DataSourceType.plug.ToString();
 
             if (ConfigurationManager.ConnectionStrings[plugDbConnectStringKey] != null)
             {
@@ -211,7 +211,8 @@ namespace NoteBook.UI
         private void btnBusinessSave_Click(object sender, EventArgs e)
         {
 
-            string conString = "Data Source=" + txt_plugServer.Text + ";Initial Catalog=" + txt_plugDataBase.Text + ";" +
+            string conString = "Data Source=" + txt_plugServer.Text + ";Initial Catalog="
+                + txt_plugDataBase.Text + ";" +
              "User ID=" + txt_plugUser.Text + ";Password="
              + txt_plugPWD.Text + ";Pooling=False;";
 

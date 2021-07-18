@@ -111,7 +111,7 @@ namespace NoteBook.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Tsb_ref_Click(object sender, EventArgs e)
+        private void Tsb_new_Click(object sender, EventArgs e)
         {
             //调整事件触发状态
             //该事件查询时已经解绑
@@ -119,8 +119,12 @@ namespace NoteBook.UI
             {
                 
             }
-                                              
+
+            Frm_recordRef f = new Frm_recordRef();
+            f.ShowDialog();
             
+
+
             //设定菜单状态
 
 
@@ -153,20 +157,6 @@ namespace NoteBook.UI
             lbl_personCodeValue.Text = CurrentUser.userName;
 
             initializeDatasource();
-
-
-            Frm_recordRef f = new Frm_recordRef();
-
-            //显示等待光标，提示加载数据
-            this.Cursor = Cursors.WaitCursor;
-            f.ActionRecord += this.RefRecord;
-                                   
-            f.ShowDialog();
-
-            this.Cursor = Cursors.Default;
-            
-           
-           
 
         }
 
@@ -439,31 +429,28 @@ namespace NoteBook.UI
         #endregion
 
 
-        #region 内部方法
+      
+
+     
+
+  
+
+ 
+
+
+
+   
+
+
+
+      
+
+   
+
 
         /// <summary>
-        /// 参照记录单，生成处理单
+        /// 计算结余金额
         /// </summary>
-        /// <param name="voucherNo"></param>
-        private void RefRecord (string voucherNo)
-        {
-            using (var db=new NoteBookContext())
-            {
-                List<NoteRecordModle> recordModle 
-                    = db.NoteRecords.Where(s => s.voucherNo == voucherNo).ToList();
-                //窗体控件赋值
-
-                foreach (var item in recordModle)
-                {
-                    this.rtxt_voucherNO.Text = item.voucherNo.ToString();
-                    this.txt_itemName.Text = item.itemName;
-                    this.rtb_memo.Text = item.memo;
-                }
-               
-            }
-        }
-
-        #endregion
 
 
 
@@ -474,23 +461,7 @@ namespace NoteBook.UI
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+       
         #region 打印
 
 
