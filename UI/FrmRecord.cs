@@ -14,18 +14,16 @@ using NoteBook.DAL;
 using NoteBook.Modle;
 using NoteBook.Properties;
 using static NoteBook.Modle.EnumModle;
-using System.Runtime.Remoting;
-using Utility.UI;
-using NoteBook.UI.List;
 
 namespace NoteBook.UI
 {
-    public partial class Frm_progress : Form
+    public partial class FrmRecord : Form
     {
-        public Frm_progress()
+        public FrmRecord()
         {
             InitializeComponent();
             this.FormClosed += new FormClosedEventHandler(this.closeParent);
+            initializeDatasource();
             initalizeControlState();
 
         }
@@ -54,10 +52,34 @@ namespace NoteBook.UI
         /// </summary>
         private void initializeDatasource()
         {
-            
+            //申请人数据源
+            cmb_requestPerson.DataSource = new UserService().getUserList().Where<UserModle>(c => c.DateOfCancellation == null)
+                .Select((c) => new { c.userID, c.name }).ToList();
+
+            cmb_requestPerson.DisplayMember = "name";
+            cmb_requestPerson.ValueMember = "userID";
+
+            //责任人数据源
+            cmb_reponsiblePerson.DataSource = new UserService().getUserList().Where<UserModle>(c => c.DateOfCancellation == null)
+                .Select((c) => new { c.userID, c.name }).ToList();
+
+            cmb_reponsiblePerson.DisplayMember = "name";
+            cmb_reponsiblePerson.ValueMember = "userID";
+
+            //录单人数据源
+            lbl_userName.Text = CurrentUser.userName;
+
+            //Dictionary<string, string> currentUser = new Dictionary<string, string>();
+            //currentUser.Add(CurrentUser.userID, CurrentUser.userName);
+            // IList list= currentUser.ToList();
+            //cmb_userID.DataSource = list;
+            //cmb_userID.DisplayMember = currentUser.Values.ToString();
+            //cmb_userID.ValueMember = currentUser.Keys.ToString();
 
 
-         
+
+
+
 
 
         }
@@ -74,9 +96,12 @@ namespace NoteBook.UI
             tsb_previewPrint.Enabled = false;
             tsb_print.Enabled = false;
 
+            rtb_progress.Enabled = false;
+
             pnl_query.Visible = false;
 
-         
+            lbl_status.Visible = false;
+            lbl_statusValue.Visible = false;
           
         }
         #endregion
@@ -104,26 +129,29 @@ namespace NoteBook.UI
 
         #endregion
 
-        #region 单据增删改查
+
+        #region 菜单事件处理
+        
+               #region 单据增删改查
 
         /// <summary>
-        /// 参照数据源，新增单据
+        /// 新增单据
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Tsb_ref_Click(object sender, EventArgs e)
+        private void Tsb_new_Click(object sender, EventArgs e)
         {
             //调整事件触发状态
             //该事件查询时已经解绑
-            if (addOrChangeFlag==addOrChangeMolde.query.ToString())
+            if (addOrChangeFlag == addOrChangeMolde.query.ToString())
             {
-                
+
             }
-                                              
-            
-            //设定菜单状态
 
 
+            //设定控件与变量状态
+
+            pnl_query.Visible = false;
             tsb_save.Enabled = true;
             tsb_abandon.Enabled = true;
             tsb_query.Enabled = false;
@@ -131,46 +159,35 @@ namespace NoteBook.UI
             tsb_previewPrint.Enabled = false;
             tsb_modify.Enabled = false;
 
-            //设定控件与变量状态
+            lbl_status.Visible = true;
+            lbl_statusValue.Visible = true;
+            lbl_statusValue.Text = VoucherStatus.开立.ToString();
 
-            pnl_query.Visible = false;
             //调整单据修改时的控件状态
             if (addOrChangeFlag == addOrChangeMolde.change.ToString())
             {
-               
-               
+
+
 
             }
+
+            //单据状态标志
             addOrChangeFlag = addOrChangeMolde.add.ToString();
 
             //清空已填制的数据
             rtb_summary.Text = "";
             rtb_memo.Text = "";
-            
+
             //设定控件值
             this.lbl_vouchNoValue.Text = DateTime.Now.ToString("yyyyMMddHHmmss");
-         
-            lbl_personCodeValue.Text = CurrentUser.userName;
+            lbl_statusValue.Text = VoucherStatus.开立.ToString();
+            
 
             initializeDatasource();
 
-
-            Frm_recordRef f = new Frm_recordRef();
-
-            //显示等待光标，提示加载数据
-            this.Cursor = Cursors.WaitCursor;
-            f.ActionRecord += this.RefRecord;
-                                   
-            f.ShowDialog();
-
-            this.Cursor = Cursors.Default;
-            
-           
-           
-
         }
 
-    
+
 
         /// <summary>
         /// 保存单据
@@ -199,62 +216,7 @@ namespace NoteBook.UI
 
         }
 
-        /// <summary>
-        /// 保存数据
-        /// </summary>
-        /// <param name="db"></param>
-        /// <param name="w"></param>
-        private void saveData(NoteBookContext db, NoteRecordModle w)
-        {
-
-           
-
-
-            //修改数据保存准备
-            if (addOrChangeFlag == addOrChangeMolde.change.ToString())
-            {
-                //w.recorder = Convert.ToDouble(txt_webUnitPrice.Text);
-              
-            }
-
-            //新增数据保存准备
-            if (addOrChangeFlag == addOrChangeMolde.add.ToString())
-            {
-
-                w.makeTime = DateTime.Now;
-                w.userID = lbl_personCode.Text;
-
-                w.voucherNo = CurrentUser.userID;
-             
-                db.NoteRecords.Add(w);
-            }
-
-
-            //数据保存
-            try
-            {
-                db.SaveChanges();
-                tsb_save.Enabled = false;
-                tsb_print.Enabled = true;
-                tsb_previewPrint.Enabled = true;
-          
-                if (addOrChangeFlag == addOrChangeMolde.change.ToString())
-                {
-                    tsb_new.Enabled = true;
-
-                }
-                if (addOrChangeFlag == addOrChangeMolde.add.ToString())
-                {
-                    tsb_modify.Enabled = true;
-                    tsb_delete.Enabled = true;
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message + ex.InnerException, "保存错误提示");
-            }
-        }
+        
 
         /// <summary>
         /// 单据修改
@@ -263,18 +225,18 @@ namespace NoteBook.UI
         /// <param name="e"></param>
         private void tsb_modify_Click(object sender, EventArgs e)
         {
-           
+
 
             addOrChangeFlag = addOrChangeMolde.change.ToString();
             //改变控件状态
             tsb_abandon.Enabled = true;
             tsb_new.Enabled = false;
             tsb_save.Enabled = true;
-           
+
             //限定可修改范围，只能修改价格信息
             dtp_makeDate.Enabled = false;
-         
-           
+
+
 
 
         }
@@ -290,10 +252,12 @@ namespace NoteBook.UI
             using (var db = new NoteBookContext())
             {
                 var q = from w in db.NoteRecords
-                        //where (w.vocherNO.Max())
-                        select new {  w.voucherNo };
+                            //where (w.voucherNo.Max())
+                        select new { w.voucherNo };
                 //赋值时注意对类型q进行转换， 不能直接写成rtxt_voucherNO.Text = q
                 rtxt_voucherNO.Text = (q.Select(s => s.voucherNo)).Max().ToString();
+
+                //调用单据查询
                 btn_query.PerformClick();
                 tsb_previewPrint.Enabled = true;
                 tsb_print.Enabled = true;
@@ -309,26 +273,23 @@ namespace NoteBook.UI
         /// <param name="e"></param>
         private void btn_query_Click(object sender, EventArgs e)
         {
-                     
-                     
+            
             addOrChangeFlag = addOrChangeMolde.query.ToString();
 
-                      
             using (var db = new NoteBookContext())
             {
                 var query = from q in db.NoteRecords
-                           
+
                             join p in db.Users on q.userID equals p.userID.ToString()
-                          
 
                             where q.voucherNo == rtxt_voucherNO.Text
 
                             select new
                             {
                                 q.makeTime,
-                               
+
                                 q.voucherNo,
-                               
+                                q.itemName,
                                 p.userID,
                                 p.name,
                                 q.recorder
@@ -349,13 +310,14 @@ namespace NoteBook.UI
                     initializeDatasource();
 
                     dtp_makeDate.Text = item.makeTime.ToString();
-                                                                        
-                                       
-                 
+                    txt_itemName.Text = item.itemName.ToString();
 
-                    
 
-                                    
+
+
+
+
+
 
 
 
@@ -433,61 +395,88 @@ namespace NoteBook.UI
             }
             clearDate();
             tsb_save.Enabled = false;
-     
+
             tsb_abandon.Enabled = false;
         }
         #endregion
 
 
+
+        #endregion
+
+        
         #region 内部方法
 
         /// <summary>
-        /// 参照记录单，生成处理单
+        /// 保存数据
         /// </summary>
-        /// <param name="voucherNo"></param>
-        private void RefRecord (string voucherNo)
+        /// <param name="db"></param>
+        /// <param name="m"></param>
+        private void saveData(NoteBookContext db, NoteRecordModle m)
         {
-            using (var db=new NoteBookContext())
-            {
-                List<NoteRecordModle> recordModle 
-                    = db.NoteRecords.Where(s => s.voucherNo == voucherNo).ToList();
-                //窗体控件赋值
 
-                foreach (var item in recordModle)
-                {
-                    this.rtxt_voucherNO.Text = item.voucherNo.ToString();
-                    this.txt_itemName.Text = item.itemName;
-                    this.rtb_memo.Text = item.memo;
-                }
+
+            //修改数据保存准备
+            if (addOrChangeFlag == addOrChangeMolde.change.ToString())
+            {
+                //w.recorder = Convert.ToDouble(txt_webUnitPrice.Text);
+
+            }
+
+            //新增数据保存准备
+            if (addOrChangeFlag == addOrChangeMolde.add.ToString())
+            {
+
+                m.voucherNo = lbl_vouchNoValue.Text;
+                m.itemName = txt_itemName.Text;
+
+                m.makeTime = DateTime.Now;
+                m.requesteDate = dtp_requestDate.Value;
+                m.needCompletedDate = dtp_needCompletedDate.Value;
+                m.planCompletedDate = dtp_planCompletedDate.Value;
+
                
+                m.userID = CurrentUser.userID;
+                m.requesteUserID = cmb_requestPerson.SelectedValue.ToString();
+                m.responsibleUserID = cmb_reponsiblePerson.SelectedValue.ToString();
+
+                m.memo = rtb_memo.Text;
+                m.recorder = rtb_summary.Text;
+                m.status =VoucherStatus.开立.ToString();
+
+
+
+                db.NoteRecords.Add(m);
+            }
+
+
+            //数据保存
+            try
+            {
+                db.SaveChanges();
+                tsb_save.Enabled = false;
+                tsb_print.Enabled = true;
+                tsb_previewPrint.Enabled = true;
+
+                if (addOrChangeFlag == addOrChangeMolde.change.ToString())
+                {
+                    tsb_new.Enabled = true;
+
+                }
+                if (addOrChangeFlag == addOrChangeMolde.add.ToString())
+                {
+                    tsb_modify.Enabled = true;
+                    tsb_delete.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.InnerException, "保存错误提示");
             }
         }
 
         #endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -560,7 +549,7 @@ namespace NoteBook.UI
             String[] head = new string[5] { "记录日期", "记录单号", "记录人", "概要", "正文" };
             string[] content = new string[5] {  dtp_makeDate.Value.Date.ToString("yyyy-MM-dd"),
                                                 lbl_vouchNoValue.Text,
-                                                lbl_personCodeValue.Text,
+                                                lbl_userName.Text,
                                                 rtb_summary.Text, rtb_memo.Text,
                                                  };
 

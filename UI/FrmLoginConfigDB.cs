@@ -69,6 +69,12 @@ namespace NoteBook.UI
 
         #region 事件处理
 
+        /// <summary>
+        /// 窗体加载时读取数据库配置
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void Frm_DoubleDataBaseConfig_Load(object sender, EventArgs e)
         {
             this.readDataBase();
@@ -105,41 +111,46 @@ namespace NoteBook.UI
         /// 读取数据库连接信息中的数据库信息
         /// </summary>
 
+        
         private void readDataBase()
         {
-            string conectDataBase = "myConection";
-            string conectPlugDataBase = "plugConection";
+            string businessDbConnectStringKey = DataSourceType.business.ToString();
+            string plugDbConnectStringKey = DataSourceType.business.ToString();
 
-            if (ConfigurationManager.ConnectionStrings[conectDataBase] != null)
+            if (ConfigurationManager.ConnectionStrings[plugDbConnectStringKey] != null)
             {
-                string conString = ConfigurationManager.ConnectionStrings[conectDataBase].ToString();
+                string conString = ConfigurationManager.ConnectionStrings[plugDbConnectStringKey].ToString();
                 string deConString = Utility.Encrypt.Decode(conString);
                 int dataBaseIndex = deConString.IndexOf("Catalog=");
                 int UserIndex = deConString.IndexOf(";User");
 
+                this.lblPlug.Text = deConString.Substring(dataBaseIndex + 8, UserIndex - (dataBaseIndex + 8));
+                this.lblPlug.ForeColor = Color.Green;
+
 
 
             }
             else
             {
-
+                this.lblPlug.Text = "未配置";
+                this.lblPlug.ForeColor = Color.Red; ;
             }
 
-            if (ConfigurationManager.ConnectionStrings[conectPlugDataBase] != null)
+            if (ConfigurationManager.ConnectionStrings[businessDbConnectStringKey] != null)
             {
-                string conString = ConfigurationManager.ConnectionStrings[conectPlugDataBase].ToString();
+                string conString = ConfigurationManager.ConnectionStrings[businessDbConnectStringKey].ToString();
                 string deConString = Encrypt.Decode(conString);
                 int dataBaseIndex = deConString.IndexOf("Catalog=");
                 int UserIndex = deConString.IndexOf(";User");
 
-                this.lbl_plugStatus.Text = deConString.Substring(dataBaseIndex + 8, UserIndex - (dataBaseIndex + 8));
-                this.lbl_plugStatus.ForeColor = Color.Green;
+                this.lblBusiness.Text = deConString.Substring(dataBaseIndex + 8, UserIndex - (dataBaseIndex + 8));
+                this.lblBusiness.ForeColor = Color.Green;
 
             }
             else
             {
-                this.lbl_plugStatus.Text = "未配置";
-                this.lbl_plugStatus.ForeColor = Color.Red; ;
+                this.lblBusiness.Text = "未配置";
+                this.lblBusiness.ForeColor = Color.Red; ;
             }
         }
 
@@ -155,7 +166,7 @@ namespace NoteBook.UI
         /// <param name="e"></param>
         private void btn_deletePlugConfig_Click(object sender, EventArgs e)
         {
-            if (lbl_plugStatus.Text != "未配置")
+            if (lblBusiness.Text != "未配置")
             {
                 string conectionInformation =DataSourceType.plug.ToString();
 
@@ -164,8 +175,8 @@ namespace NoteBook.UI
                 config.Save(ConfigurationSaveMode.Modified);
                 MessageBox.Show("数据库配置删除成功", "删除提示");
                 ConfigurationManager.RefreshSection("connectionStrings");
-                lbl_plugStatus.Text = "未配置";
-                lbl_plugStatus.ForeColor = Color.Red;
+                lblBusiness.Text = "未配置";
+                lblBusiness.ForeColor = Color.Red;
 
 
 
@@ -209,8 +220,8 @@ namespace NoteBook.UI
 
             //业务数据库配置成功，则引发事件
             onPlugConfigSuccess(EventArgs.Empty);
-            lbl_plugStatus.Text = "已经配置";
-            lbl_plugStatus.ForeColor = Color.Green;
+            lblBusiness.Text = "已经配置";
+            lblBusiness.ForeColor = Color.Green;
         }
 
         /// <summary>
@@ -301,7 +312,8 @@ namespace NoteBook.UI
             //新建一个连接字符串实例,三个参数的构造函数可以兼容EF的连接字符串
             //因为EF可以连接多种数据库，所以必须提供providerName
 
-            ConnectionStringSettings mySettings = new ConnectionStringSettings(dataSourceType.ToString(), encryptConString, provider);
+            ConnectionStringSettings mySettings = new ConnectionStringSettings(dataSourceType.ToString(), 
+                encryptConString, provider);
 
           
             // 将新的连接串添加到配置文件中. 

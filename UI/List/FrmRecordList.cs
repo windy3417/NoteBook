@@ -15,9 +15,9 @@ using System.Linq.Expressions;
 
 namespace NoteBook.UI.List
 {
-    public partial class Frm_recordList : Utility.UI.Frm_voucherList
+    public partial class FrmRecordList : Utility.UI.Frm_voucherList
     {
-        public Frm_recordList()
+        public FrmRecordList()
         {
             InitializeComponent();
             initializeControlState();

@@ -1,6 +1,6 @@
 ﻿namespace NoteBook.UI.List
 {
-    partial class Frm_recordList
+    partial class FrmRecordList
     {
         /// <summary>
         /// 必需的设计器变量。

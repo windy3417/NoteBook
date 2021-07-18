@@ -107,11 +107,11 @@
     <Compile Include="UI\FrmLoginConfigDB.Designer.cs">
       <DependentUpon>FrmLoginConfigDB.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Frm_progress.cs">
+    <Compile Include="UI\FrmProgress.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Frm_progress.Designer.cs">
-      <DependentUpon>Frm_progress.cs</DependentUpon>
+    <Compile Include="UI\FrmProgress.Designer.cs">
+      <DependentUpon>FrmProgress.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FrmUser.cs">
       <SubType>Form</SubType>
@@ -119,17 +119,17 @@
     <Compile Include="UI\FrmUser.Designer.cs">
       <DependentUpon>FrmUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Frm_record.cs">
+    <Compile Include="UI\FrmRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Frm_record.Designer.cs">
-      <DependentUpon>Frm_record.cs</DependentUpon>
+    <Compile Include="UI\FrmRecord.Designer.cs">
+      <DependentUpon>FrmRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\List\Frm_recordList.cs">
+    <Compile Include="UI\List\FrmRecordList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\List\Frm_recordList.Designer.cs">
-      <DependentUpon>Frm_recordList.cs</DependentUpon>
+    <Compile Include="UI\List\FrmRecordList.Designer.cs">
+      <DependentUpon>FrmRecordList.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\List\Frm_recordRef.cs">
       <SubType>Form</SubType>
@@ -165,11 +165,11 @@
     <EmbeddedResource Include="UI\FrmLoginConfigDB.resx">
       <DependentUpon>FrmLoginConfigDB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Frm_progress.resx">
-      <DependentUpon>Frm_progress.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FrmProgress.resx">
+      <DependentUpon>FrmProgress.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Frm_record.resx">
-      <DependentUpon>Frm_record.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FrmRecord.resx">
+      <DependentUpon>FrmRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\List\Frm_recordRef.resx">
       <DependentUpon>Frm_recordRef.cs</DependentUpon>

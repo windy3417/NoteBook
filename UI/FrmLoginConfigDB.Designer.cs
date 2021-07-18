@@ -34,7 +34,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_deletePlugConfig = new System.Windows.Forms.Button();
-            this.lbl_plugStatus = new System.Windows.Forms.Label();
+            this.lblBusiness = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gb_plugDataBase = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -69,6 +69,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnConnectTest = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblPlug = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.gb_plugDataBase.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -76,6 +80,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -87,21 +92,21 @@
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.btn_deletePlugConfig);
-            this.groupBox1.Controls.Add(this.lbl_plugStatus);
+            this.groupBox1.Controls.Add(this.lblBusiness);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(31, 204);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(250, 80);
+            this.groupBox1.Size = new System.Drawing.Size(282, 80);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "配置状态";
+            this.groupBox1.Text = "业务配置状态";
             // 
             // btn_deletePlugConfig
             // 
             this.btn_deletePlugConfig.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_deletePlugConfig.Image = ((System.Drawing.Image)(resources.GetObject("btn_deletePlugConfig.Image")));
             this.btn_deletePlugConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_deletePlugConfig.Location = new System.Drawing.Point(24, 42);
+            this.btn_deletePlugConfig.Location = new System.Drawing.Point(40, 42);
             this.btn_deletePlugConfig.Name = "btn_deletePlugConfig";
             this.btn_deletePlugConfig.Size = new System.Drawing.Size(75, 23);
             this.btn_deletePlugConfig.TabIndex = 9;
@@ -112,14 +117,14 @@
             // 
             // lbl_plugStatus
             // 
-            this.lbl_plugStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_plugStatus.AutoSize = true;
-            this.lbl_plugStatus.ForeColor = System.Drawing.Color.Red;
-            this.lbl_plugStatus.Location = new System.Drawing.Point(123, 22);
-            this.lbl_plugStatus.Name = "lbl_plugStatus";
-            this.lbl_plugStatus.Size = new System.Drawing.Size(41, 12);
-            this.lbl_plugStatus.TabIndex = 8;
-            this.lbl_plugStatus.Text = "未配置";
+            this.lblBusiness.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBusiness.AutoSize = true;
+            this.lblBusiness.ForeColor = System.Drawing.Color.Red;
+            this.lblBusiness.Location = new System.Drawing.Point(139, 22);
+            this.lblBusiness.Name = "lbl_plugStatus";
+            this.lblBusiness.Size = new System.Drawing.Size(41, 12);
+            this.lblBusiness.TabIndex = 8;
+            this.lblBusiness.Text = "未配置";
             // 
             // label2
             // 
@@ -502,11 +507,60 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnPlugStringSave_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.lblPlug);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Location = new System.Drawing.Point(340, 204);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(282, 80);
+            this.groupBox3.TabIndex = 21;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "外挂配置状态";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(40, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "删除配置";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn_deletePlugConfig_Click);
+            // 
+            // lblPlug
+            // 
+            this.lblPlug.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPlug.AutoSize = true;
+            this.lblPlug.ForeColor = System.Drawing.Color.Red;
+            this.lblPlug.Location = new System.Drawing.Point(139, 22);
+            this.lblPlug.Name = "lblPlug";
+            this.lblPlug.Size = new System.Drawing.Size(41, 12);
+            this.lblPlug.TabIndex = 8;
+            this.lblPlug.Text = "未配置";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 22);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(95, 12);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "数据库配置状态:";
+            // 
             // FrmLoginConfigDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(659, 418);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gb_plugDataBase);
@@ -526,6 +580,8 @@
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -534,7 +590,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_deletePlugConfig;
-        private System.Windows.Forms.Label lbl_plugStatus;
+        private System.Windows.Forms.Label lblBusiness;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox gb_plugDataBase;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -570,5 +626,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnConnectTest;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblPlug;
+        private System.Windows.Forms.Label label10;
     }
 }

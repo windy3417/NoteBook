@@ -74,11 +74,11 @@
             this.tv_menu.ItemHeight = 20;
             this.tv_menu.Location = new System.Drawing.Point(0, 0);
             this.tv_menu.Name = "tv_menu";
-            treeNode1.Name = "NoteBook.UI.Frm_record";
+            treeNode1.Name = "NoteBook.UI.FrmRecord";
             treeNode1.Text = "协同发起";
-            treeNode2.Name = "NoteBook.UI.Frm_progress";
+            treeNode2.Name = "NoteBook.UI.FrmProgress";
             treeNode2.Text = "协同处理";
-            treeNode3.Name = "NoteBook.UI.List.Frm_recordList";
+            treeNode3.Name = "NoteBook.UI.List.FrmRecordList";
             treeNode3.Tag = "";
             treeNode3.Text = "协同查询";
             treeNode4.Name = "noteManage";
